@@ -1,0 +1,1709 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><!-- template: public/docs/_layout--><head><title>Style Guide - ts - GUIDE</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl as appCtrl" class="l-offset-nav l-offset-side-nav"><nav data-swiftype-index="false" scroll-y-offset-element="scroll-y-offset-element" class="main-nav l-pinned-top l-layer-5"><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/events.html" md-button>Events</a></li><li class="l-right"><a class="main-nav-button" href="/docs/ts/latest/quickstart.html" md-button>Get Started</a></li></ul></nav><!-- Include this file ONLY when current.path[2] is defined--><nav data-swiftype-index="false" ng-class="appCtrl.showDocsNav ? 'is-visible' : ''" class="sidenav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="sidenav-search st-input-wrapper"><div class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="text" placeholder="SEARCH DOCS..." class="st-default-search-input"/></div><button aria-label="View Docs Menu" ng-click="appCtrl.toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><ul class="sidenav-links"><li class="sidenav-section no-border"><a href="/docs/ts/latest/" class="nav-title">Docs Home</a></li><!-- CORE DOCUMENTATION--><li class="sidenav-section-divider"><h3>Core Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/quickstart.html" title="Quickstart" class="nav-title ">Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/cli-quickstart.html" title="CLI Quickstart" class="nav-title ">CLI Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/" title="How to read and use this documentation." class="nav-title is-parent is-selected">Guide<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/" title="How to read and use this documentation.">1. Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/setup.html" title="Install the Angular QuickStart seed for faster, more efficient development on your machine.">2. Setup</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/learning-angular.html" title="A suggested path through the documentation for Angular newcomers.">3. Learning Angular</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/architecture.html" title="The basic building blocks of Angular applications.">4. Architecture</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/appmodule.html" title="Tell Angular how to construct and bootstrap the app in the root &quot;AppModule&quot;.">5. The Root Module</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/displaying-data.html" title="Property binding helps show app data in the UI.">6. Displaying Data</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/user-input.html" title="User input triggers DOM events. We listen to those events with event bindings that funnel updated values back into our components and models.">7. User Input</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/forms.html" title="A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors.">8. Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/dependency-injection.html" title="Angular's dependency injection system creates and delivers dependent services &quot;just-in-time&quot;.">9. Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/template-syntax.html" title="Learn how to write templates that display data and consume user events with the help of data binding.">10. Template Syntax</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/cheatsheet.html" title="Cheat Sheet">11. Cheat Sheet</a></li><li class="nav-list-item is-selected"><a href="/docs/ts/latest/guide/style-guide.html" title="Write Angular with style.">12. Style Guide</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/glossary.html" title="Brief definitions of the most important words in the Angular vocabulary.">13. Glossary</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/change-log.html" title="An annotated history of recent documentation improvements.">14. Change Log</a></li></ul></div></li><li class="sidenav-section no-border"><a href="/docs/ts/latest/api/" title="API Reference" class="nav-title ">API Reference</a></li><!-- ADVANCED DOCUMENATION--><li class="sidenav-section-divider"><h3>Additional Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript." class="nav-title is-parent ">Tutorial<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript.">1. Introduction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt1.html" title="We build a simple hero editor.">2. The Hero Editor</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt2.html" title="We build a master/detail page with a list of heroes.">3. Master/Detail</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt3.html" title="We refactor the master/detail view into separate components.">4. Multiple Components</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt4.html" title="We create a reusable service to manage our hero data calls.">5. Services</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt5.html" title="We add the Angular Router and learn to navigate among the views.">6. Routing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt6.html" title="We convert our service and components to use Angular's HTTP service.">7. HTTP</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system." class="nav-title is-parent ">Advanced<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system.">Animations</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements.">Attribute Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/browser-support.html" title="Browser support and polyfills guide.">Browser support</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/component-styles.html" title="Learn how to apply CSS styles to components.">Component Styles</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/deployment.html" title="Learn how to deploy your Angular app.">Deployment</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" title="Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.">Hierarchical Injectors</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/reactive-forms.html" title="Create a reactive form using FormBuilder, groups, and arrays.">Reactive Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/server-communication.html" title="Use an HTTP Client to talk to a remote server.">HTTP Client</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/lifecycle-hooks.html" title="Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them.">Lifecycle Hooks</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule.">NgModules</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/npm-packages.html" title="Recommended npm packages, and how to specify package dependencies.">Npm Packages</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/pipes.html" title="Pipes transform displayed values within a template.">Pipes</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/router.html" title="Discover the basics of screen navigation with the Angular Router.">Routing &amp; Navigation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/security.html" title="Developing for content security in Angular applications.">Security</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/setup-systemjs-anatomy.html" title="Inside the local development environment for SystemJS.">Setup Anatomy</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/structural-directives.html" title="Angular has a powerful template engine that lets us easily manipulate the DOM structure of our elements.">Structural Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/testing.html" title="Techniques and practices for testing an Angular app.">Testing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/typescript-configuration.html" title="TypeScript configuration for Angular developers.">TypeScript Configuration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/upgrade.html" title="Incrementally upgrade an AngularJS application to Angular.">Upgrading from AngularJS</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/webpack.html" title="Create Angular applications with a Webpack based tooling.">Webpack: an introduction</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios." class="nav-title is-parent ">Cookbook<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios.">Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/aot-compiler.html" title="Learn how to use Ahead-of-time compilation.">Ahead-of-Time Compilation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ajs-quick-reference.html" title="Learn how AngularJS concepts and techniques map to Angular.">AngularJS to Angular</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-communication.html" title="Share information between different directives and components.">Component Interaction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dependency-injection.html" title="Techniques for Dependency Injection.">Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-component-loader.html" title="Load components dynamically.">Dynamic Component Loader</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-form.html" title="Render dynamic forms with FormGroup.">Dynamic Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/form-validation.html" title="Validate user's form entries.">Form Validation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/i18n.html" title="Translate the app's template text into multiple languages.">Internationalization (i18n)</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ngmodule-faq.html" title="Answers to frequently asked questions about @NgModule.">NgModule FAQs</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/set-document-title.html" title="Setting the document or window title using the Title service.">Set the Document Title</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ts-to-js.html" title="Convert Angular TypeScript examples into ES6 and ES5 JavaScript.">TypeScript to JavaScript</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/visual-studio-2015.html" title="Use Visual Studio 2015 with the QuickStart files.">Visual Studio 2015 QuickStart</a></li></ul></div></li></ul><nav class="dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="appCtrl.toggleVersionMenu($event)" class="dropdown-button">Angular for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="appCtrl.toggleVersionMenu($event)" ng-show="appCtrl.showMenu" class="overlay ng-hide"></div><ul ng-class="appCtrl.showMenu ? 'is-visible' : ''" class="dropdown-menu"><li><a href="/docs/ts/latest/guide/style-guide.html" md-button>Angular for TypeScript </a></li><li><a href="/docs/js/latest/guide/style-guide.html" md-button>Angular for JavaScript </a></li></ul></nav></nav><script>// Could put in appCtrl but only needed here and clear here
+(function scrollToSelectedLink() {
+  var sideNav = document.getElementsByClassName('sidenav')[0];
+  var link = sideNav.getElementsByClassName('is-selected')[0];
+  if(link && link.offsetTop > window.innerHeight){
+    sideNav.scrollTop = link.offsetTop - (window.innerHeight/2);
+    //alert("offsetTop: " + link.offsetTop + " side-nav top is " + sideNav.scrollTop);
+  }
+})()</script><header class="hero background-sky"><h1 class="hero-title ">Style Guide </h1><div class="clear"></div></header><div class="banner"><p class="text-body">Write Angular with style.</p></div><article class="l-content-small grid-fluid docs-content"><script>function why(id, backTo) {
+  var id = "#"+id;
+  var el = document.querySelector(id);
+  el.hidden=el.hidden=!el.hidden;
+
+  if (el.hidden && backTo){
+    // the next line is required to work around a bug in WebKit (Chrome / Safari)
+    location.href = "#";
+    location.href =  "#" + backTo;
+  }
+}</script><script>function verbose(isVerbose) {
+  isVerbose = !! isVerbose;
+  var el = document.querySelector('button.verbose.off');
+  el.style.display = isVerbose ? 'block' : 'none';
+  var el = document.querySelector('button.verbose.on');
+  el.style.display = isVerbose ? 'none' : 'block';
+
+  CCSStylesheetRuleStyle('main','.l-verbose-section', 'display',
+    isVerbose ? 'block' : 'none');
+}
+</script><script>function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
+  /* returns the value of the element style of the rule in the stylesheet
+  *  If no value is given, reads the value
+  *  If value is given, the value is changed and returned
+  *  If '' (empty string) is given, erases the value.
+  *  The browser will apply the default one
+  *
+  * string stylesheet: part of the .css name to be recognized, e.g. 'default'
+  * string selectorText: css selector, e.g. '#myId', '.myClass', 'thead td'
+  * string style: camelCase element style, e.g. 'fontSize'
+  * string value optional : the new value
+  */
+  var CCSstyle = undefined, rules, sheet;
+  for(var m in document.styleSheets){
+    sheet = document.styleSheets[m];
+    if(sheet.href && sheet.href.indexOf(stylesheet) != -1){
+    rules = sheet[document.all ? 'rules' : 'cssRules'];
+    for(var n in rules){
+      console.log(rules[n].selectorText);
+      if(rules[n].selectorText == selectorText){
+        CCSstyle = rules[n].style;
+        break;
+      }
+    }
+    break;
+    }
+  }
+  if(value == undefined)
+    return CCSstyle[style]
+  else
+    return CCSstyle[style] = value
+}
+</script><p>Welcome to the Angular Style Guide</p>
+<h2 id="purpose">Purpose</h2>
+<p>Looking for an opinionated guide to Angular syntax, conventions, and application structure?
+Step right in!
+This style guide presents our preferred conventions and, as importantly, explains why.</p>
+<div class="l-main-section"></div><h2 id="style-vocabulary">Style vocabulary</h2>
+<p>Each guideline describes either a good or bad practice, and all have a consistent presentation.</p>
+<p>The wording of each guideline indicates how strong the recommendation is.</p>
+<div class="s-rule do"><p><strong>Do</strong> is one that should always be followed.
+<em>Always</em> might be a bit too strong of a word.
+Guidelines that literally should always be followed are extremely rare.
+On the other hand, you need a really unusual case for breaking a <em>Do</em> guideline.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> guidelines should generally be followed.
+If you fully understand the meaning behind the guideline and have a good reason to deviate, then do so. Please strive to be consistent.</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> indicates something you should almost never do. Code examples to <em>avoid</em> have an unmistakeable red header.</p>
+</div><div class="l-main-section"></div><h2 id="file-structure-conventions">File structure conventions</h2>
+<p>Some code examples display a file that has one or more similarly named companion files. 
+For example, <code>hero.component.ts</code> and <code>hero.component.html</code>.</p>
+<p>The guideline will use the shortcut <code>hero.component.ts|html|css|spec</code> to represent those various files. Using this shortcut makes this guide&#39;s file structures easier to read and more terse.</p>
+<div class="l-main-section"></div><a id="toc"></a><h2 id="table-of-contents">Table of contents</h2>
+<ol>
+<li><a href="#single-responsibility">Single responsibility</a></li>
+<li><a href="#naming">Naming</a></li>
+<li><a href="#coding-conventions">Coding conventions</a></li>
+<li><a href="#application-structure-and-angular-modules">App structure and Angular modules</a></li>
+<li><a href="#components">Components</a></li>
+<li><a href="#directives">Directives</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#data-services">Data services</a></li>
+<li><a href="#lifecycle-hooks">Lifecycle hooks</a></li>
+<li><a href="#appendix">Appendix</a></li>
+</ol>
+<div class="l-main-section"></div><h2 id="single-responsibility">Single responsibility</h2>
+<p>Apply the 
+<a href="https://wikipedia.org/wiki/Single_responsibility_principle" target="_blank"><i>Single Responsibility Principle</i> (SRP)</a>
+to all components, services, and other symbols. 
+This helps make the app cleaner, easier to read and maintain, and more testable.</p>
+<h3 id="-a-id-01-01-a-_rule-of-one_"><a id="01-01"></a><em>Rule of One</em></h3>
+<h4 id="-a-href-01-01-style-01-01-a-"><a href="#01-01">Style 01-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> define one thing, such as a service or component, per file.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> limiting files to 400 lines of code.</p>
+</div><div class="s-why"><p><strong>Why?</strong> One component per file makes it far easier to read, maintain, and avoid 
+collisions with teams in source control.</p>
+</div><div class="s-why"><p><strong>Why?</strong> One component per file avoids hidden bugs that often arise when combining components in a file where they may share variables, create unwanted closures, or unwanted coupling with dependencies.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> A single component can be the default export for its file which facilitates lazy loading with the router.</p>
+</div><p>The key is to make the code more reusable, easier to read, and less mistake prone.</p>
+<p>The following <em>negative</em> example defines the <code>AppComponent</code>, bootstraps the app, defines the <code>Hero</code> model object, and loads heroes from the server ... all in the same file. <em>Don&#39;t do this</em>.</p>
+<div class="code-example is-anti-pattern"><header><h4>app/heroes/hero.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+import { platformBrowserDynamic } from &#39;@angular/platform-browser-dynamic&#39;;
+import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+import { NgModule, Component, OnInit } from &#39;@angular/core&#39;;
+
+class Hero {
+  id: number;
+  name: string;
+}
+
+@Component({
+  selector: &#39;my-app&#39;,
+  template: `
+      &lt;h1&gt;{{title}}&lt;/h1&gt;
+      &lt;pre&gt;{{heroes | json}}&lt;/pre&gt;
+    `,
+  styleUrls: [&#39;app/app.component.css&#39;]
+})
+class AppComponent implements OnInit {
+  title = &#39;Tour of Heroes&#39;;
+
+  heroes: Hero[] = [];
+
+  ngOnInit() {
+    getHeroes().then(heroes =&gt; this.heroes = heroes);
+  }
+}
+
+@NgModule({
+  imports: [ BrowserModule ],
+  declarations: [ AppComponent ],
+  exports: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+const HEROES: Hero[] = [
+  {id: 1, name: &#39;Bombasto&#39;},
+  {id: 2, name: &#39;Tornado&#39;},
+  {id: 3, name: &#39;Magneta&#39;},
+];
+
+function getHeroes(): Promise&lt;Hero[]&gt; {
+  return Promise.resolve(HEROES); // TODO: get hero data from the server;
+}
+</code-example></div><p>It is a better practice to redistribute the component and its 
+supporting classes into their own, dedicated files.</p>
+<code-tabs><code-pane language="ts" name="main.ts" format="linenums">import { platformBrowserDynamic } from &#39;@angular/platform-browser-dynamic&#39;;
+
+import { AppModule }      from &#39;./app/app.module&#39;;
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+</code-pane><code-pane language="ts" name="app/app.module.ts" format="linenums">import { NgModule } from &#39;@angular/core&#39;;
+import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+import { RouterModule } from &#39;@angular/router&#39;;
+
+import { AppComponent } from &#39;./app.component&#39;;
+import { HeroesComponent } from &#39;./heroes/heroes.component&#39;;
+
+@NgModule({
+  imports: [
+    BrowserModule,
+  ],
+  declarations: [
+    AppComponent,
+    HeroesComponent
+  ],
+  exports: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+</code-pane><code-pane language="ts" name="app/app.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+import { HeroService } from &#39;./heroes&#39;;
+
+@Component({
+  selector: &#39;toh-app&#39;,
+  template: `
+      &lt;toh-heroes&gt;&lt;/toh-heroes&gt;
+    `,
+  styleUrls: [&#39;./app.component.css&#39;],
+  providers: [ HeroService ]
+})
+export class AppComponent { }
+</code-pane><code-pane language="ts" name="app/heroes/heroes.component.ts" format="linenums">import { Component, OnInit } from &#39;@angular/core&#39;;
+
+import { Hero, HeroService } from &#39;./shared&#39;;
+
+@Component({
+  selector: &#39;toh-heroes&#39;,
+  template: `
+      &lt;pre&gt;{{heroes | json}}&lt;/pre&gt;
+    `
+})
+export class HeroesComponent implements OnInit {
+  heroes: Hero[] = [];
+
+  constructor(private heroService: HeroService) {}
+
+  ngOnInit() {
+    this.heroService.getHeroes()
+      .then(heroes =&gt; this.heroes = heroes);
+  }
+}
+</code-pane><code-pane language="ts" name="app/heroes/shared/hero.service.ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+
+import { HEROES } from &#39;./mock-heroes&#39;;
+
+@Injectable()
+export class HeroService {
+  getHeroes() {
+    return Promise.resolve(HEROES);
+  }
+}
+</code-pane><code-pane language="ts" name="app/heroes/shared/hero.model.ts" format="linenums">export class Hero {
+  id: number;
+  name: string;
+}
+</code-pane><code-pane language="ts" name="app/heroes/shared/mock-heroes.ts" format="linenums">import { Hero } from &#39;./hero.model&#39;;
+
+export const HEROES: Hero[] = [
+  {id: 1, name: &#39;Bombasto&#39;},
+  {id: 2, name: &#39;Tornado&#39;},
+  {id: 3, name: &#39;Magneta&#39;},
+];
+</code-pane></code-tabs><p>As the app grows, this rule becomes even more important.</p>
+<a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-01-02-a-small-functions"><a id="01-02"></a>Small functions</h3>
+<h4 id="-a-href-01-02-style-01-02-a-"><a href="#01-02">Style 01-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> define small functions</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> limiting to no more than 75 lines.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Small functions are easier to test, especially when they do one thing and serve one purpose.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Small functions promote reuse.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Small functions are easier to read.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Small functions are easier to maintain.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Small functions help avoid hidden bugs that come with large functions that share variables with external scope, create unwanted closures, or unwanted coupling with dependencies.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="naming">Naming</h2>
+<p>Naming conventions are hugely important to maintainability and readability. This guide recommends naming conventions for the file name and the symbol name.</p>
+<div class="l-main-section"></div><h3 id="-a-id-02-01-a-general-naming-guidelines"><a id="02-01"></a>General Naming Guidelines</h3>
+<h4 id="-a-href-02-01-style-02-01-a-"><a href="#02-01">Style 02-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use consistent names for all symbols.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> follow a pattern that describes the symbol&#39;s feature then its type. The recommended pattern is <code>feature.type.ts</code>.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Naming conventions help provide a consistent way to find content at a glance. Consistency within the project is vital. Consistency with a team is important. Consistency across a company provides tremendous efficiency.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The naming conventions should simply help find desired code faster and make it easier to understand.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Names of folders and files should clearly convey their intent. For example, <code>app/heroes/hero-list.component.ts</code> may contain a component that manages a list of heroes.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-02-a-separate-file-names-with-dots-and-dashes"><a id="02-02"></a>Separate file names with dots and dashes</h3>
+<h4 id="-a-href-02-02-style-02-02-a-"><a href="#02-02">Style 02-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use dashes to separate words in the descriptive name.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> use dots to separate the descriptive name from the type.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> use consistent type names for all components following a pattern that describes the component&#39;s feature then its type. A recommended pattern is <code>feature.type.ts</code>.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> use conventional type names including <code>.service</code>, <code>.component</code>, <code>.pipe</code>, <code>.module</code>, and <code>.directive</code>. 
+Invent additional type names if you must but take care not to create too many.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Type names provide a consistent way to quickly identify what is in the file.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Type names make it easy to find a specific file type using an editor or IDE&#39;s fuzzy search techniques.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Unabbreviated type names such as <code>.service</code> are descriptive and unambiguous.
+Abbreviations such as <code>.srv</code>, <code>.svc</code>, and <code>.serv</code> can be confusing.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Type names provide pattern matching for any automated tasks.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-03-a-symbols-and-file-names"><a id="02-03"></a>Symbols and file names</h3>
+<h4 id="-a-href-02-03-style-02-03-a-"><a href="#02-03">Style 02-03</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use consistent names for all assets named after what they represent.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> use upper camel case for class names.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> match the name of the symbol to the name of the file.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> append the symbol name with the conventional suffix (such as <code>Component</code>, 
+<code>Directive</code>, <code>Module</code>, <code>Pipe</code>, or <code>Service</code>) for a thing of that type.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> give the filename the conventional suffix (such as <code>.component.ts</code>, <code>.directive.ts</code>, 
+<code>.module.ts</code>, <code>.pipe.ts</code>, or <code>.service.ts</code>) for a file of that type.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Consistent conventions make it easy to quickly identify 
+and reference assets of different types.</p>
+</div><table width="100%"><col width="50%"><col width="50%"><tr><th>Symbol Name</th><th>File Name</th></tr><tr style="vertical-align:top"><td><code-example>@Component({ ... })
+export class AppComponent { }</code-example></td><td><p>app.component.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Component({ ... })
+export class HeroesComponent { }</code-example></td><td><p>heroes.component.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Component({ ... })
+export class HeroListComponent { }</code-example></td><td><p>hero-list.component.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Component({ ... })
+export class HeroDetailComponent { }</code-example></td><td><p>hero-detail.component.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Directive({ ... })
+export class ValidationDirective { }</code-example></td><td><p>validation.directive.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@NgModule({ ... })
+export class AppModule</code-example></td><td><p>app.module.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Pipe({ name: 'initCaps' })
+export class InitCapsPipe implements PipeTransform { }</code-example></td><td><p>init-caps.pipe.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Injectable()
+export class UserProfileService { }</code-example></td><td><p>user-profile.service.ts</p>
+</td></tr></table><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-04-a-service-names"><a id="02-04"></a>Service names</h3>
+<h4 id="-a-href-02-04-style-02-04-a-"><a href="#02-04">Style 02-04</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use consistent names for all services named after their feature.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> suffix a service class name with Service. 
+For example, something that gets data or heroes 
+should be called a <code>DataService</code> or a <code>HeroService</code>.</p>
+<p>A few terms are unambiguously services. They typically 
+indicate agency by ending in &quot;er&quot;. You may prefer to name 
+a service that logs messages <code>Logger</code> rather than <code>LoggerService</code>. 
+Decide if this exception is agreeable in your project. 
+As always, strive for consistency.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Provides a consistent way to quickly identify and reference services.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Clear service names such as <code>Logger</code> do not require a suffix.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Service names such as <code>Credit</code> are nouns and require a suffix and should be named with a suffix when it is not obvious if it is a service or something else.</p>
+</div><table width="100%"><col width="50%"><col width="50%"><tr><th>Symbol Name</th><th>File Name</th></tr><tr style="vertical-align:top"><td><code-example>@Injectable()
+export class HeroDataService { }</code-example></td><td><p>hero-data.service.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Injectable()
+export class CreditService { }</code-example></td><td><p>credit.service.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Injectable()
+export class Logger { }</code-example></td><td><p>logger.service.ts</p>
+</td></tr></table><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-05-a-bootstrapping"><a id="02-05"></a>Bootstrapping</h3>
+<h4 id="-a-href-02-05-style-02-05-a-"><a href="#02-05">Style 02-05</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> put bootstrapping and platform logic for the app in a file named <code>main.ts</code>.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> include error handling in the bootstrapping logic.</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> putting app logic in the <code>main.ts</code>. Instead, consider placing it in a component or service.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Follows a consistent convention for the startup logic of an app.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Follows a familiar convention from other technology platforms.</p>
+</div><div class="code-example"><header><h4>main.ts</h4></header><code-example language="ts" format="linenums">import { platformBrowserDynamic } from &#39;@angular/platform-browser-dynamic&#39;;
+
+import { AppModule }              from &#39;./app/app.module&#39;;
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .then(success =&gt; console.log(`Bootstrap success`))
+  .catch(err =&gt; console.error(err));
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-06-a-directive-selectors"><a id="02-06"></a>Directive selectors</h3>
+<h4 id="-a-href-02-06-style-02-06-a-"><a href="#02-06">Style 02-06</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> Use lower camel case for naming the selectors of directives.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Keeps the names of the properties defined in the directives that are bound to the view consistent with the attribute names.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The Angular HTML parser is case sensitive and will recognize lower camel case.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-07-a-custom-prefix-for-components"><a id="02-07"></a>Custom prefix for components</h3>
+<h4 id="-a-href-02-07-style-02-07-a-"><a href="#02-07">Style 02-07</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use a hyphenated, lowercase element selector value (e.g. <code>admin-users</code>). </p>
+</div><div class="s-rule do"><p><strong>Do</strong> use a custom prefix for a component selector. 
+For example, the prefix <code>toh</code> represents from <strong>T</strong>our <strong>o</strong>f <strong>H</strong>eroes and the prefix <code>admin</code> represents an admin feature area.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> use a prefix that identifies the feature area or the app itself.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Prevents element name collisions with components in other apps and with native HTML elements.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Makes it easier to promote and share the component in other apps.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Components are easy to identify in the DOM.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/hero.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+// HeroComponent is in the Tour of Heroes feature
+@Component({
+  selector: &#39;hero&#39;
+})
+export class HeroComponent {}
+</code-example></div><div class="code-example is-anti-pattern"><header><h4>app/users/users.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+// UsersComponent is in an Admin feature
+@Component({
+  selector: &#39;users&#39;
+})
+export class UsersComponent {}
+</code-example></div><div class="code-example"><header><h4>app/heroes/hero.component.ts</h4></header><code-example language="ts" format="linenums">@Component({
+  selector: &#39;toh-hero&#39;
+})
+export class HeroComponent {}
+</code-example></div><div class="code-example"><header><h4>app/users/users.component.ts</h4></header><code-example language="ts" format="linenums">@Component({
+  selector: &#39;admin-users&#39;
+})
+export class UsersComponent {}
+</code-example></div><h3 id="-a-id-02-08-a-custom-prefix-for-directives"><a id="02-08"></a>Custom prefix for directives</h3>
+<h4 id="-a-href-02-08-style-02-08-a-"><a href="#02-08">Style 02-08</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use a custom prefix for the selector of directives (e.g, the prefix <code>toh</code> from <strong>T</strong>our <strong>o</strong>f <strong>H</strong>eroes).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> spell non-element selectors in lower camel case unless the selector is meant to match a native HTML attribute.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Prevents name collisions.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Directives are easily identified.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/shared/validate.directive.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Directive({
+  selector: &#39;[validate]&#39;
+})
+export class ValidateDirective {}
+</code-example></div><div class="code-example"><header><h4>app/shared/validate.directive.ts</h4></header><code-example language="ts" format="linenums">@Directive({
+  selector: &#39;[tohValidate]&#39;
+})
+export class ValidateDirective {}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-09-a-pipe-names"><a id="02-09"></a>Pipe names</h3>
+<h4 id="-a-href-02-09-style-02-09-a-"><a href="#02-09">Style 02-09</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use consistent names for all pipes, named after their feature.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Provides a consistent way to quickly identify and reference pipes.</p>
+</div><table width="100%"><col width="50%"><col width="50%"><tr><th>Symbol Name</th><th>File Name</th></tr><tr style="vertical-align:top"><td><code-example>@Pipe({ name: 'ellipsis' })
+export class EllipsisPipe implements PipeTransform { }</code-example></td><td><p>ellipsis.pipe.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@Pipe({ name: 'initCaps' })
+export class InitCapsPipe implements PipeTransform { }</code-example></td><td><p>init-caps.pipe.ts</p>
+</td></tr></table><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-10-a-unit-test-file-names"><a id="02-10"></a>Unit test file names</h3>
+<h4 id="-a-href-02-10-style-02-10-a-"><a href="#02-10">Style 02-10</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> name test specification files the same as the component they test.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name test specification files with a suffix of <code>.spec</code>.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Provides a consistent way to quickly identify tests.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Provides pattern matching for <a href="http://karma-runner.github.io/">karma</a> or other test runners.</p>
+</div><table width="100%"><col width="50%"><col width="50%"><tr><th>Symbol Name</th><th>File Name</th></tr><tr style="vertical-align:top"><td><p>Components</p>
+</td><td><p>heroes.component.spec.ts</p>
+<p>hero-list.component.spec.ts</p>
+<p>hero-detail.component.spec.ts</p>
+</td></tr><tr style="vertical-align:top"><td><p>Services</p>
+</td><td><p>logger.service.spec.ts</p>
+<p>hero.service.spec.ts</p>
+<p>filter-text.service.spec.ts</p>
+</td></tr><tr style="vertical-align:top"><td><p>Pipes</p>
+</td><td><p>ellipsis.pipe.spec.ts</p>
+<p>init-caps.pipe.spec.ts</p>
+</td></tr></table><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-11-a-_end-to-end_-e2e-test-file-names"><a id="02-11"></a><em>End-to-End</em> (E2E) test file names</h3>
+<h4 id="-a-href-02-11-style-02-11-a-"><a href="#02-11">Style 02-11</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> name end-to-end test specification files after the feature they test with a suffix of <code>.e2e-spec</code>.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Provides a consistent way to quickly identify end-to-end tests.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Provides pattern matching for test runners and build automation.</p>
+</div><table width="100%"><col width="50%"><col width="50%"><tr><th>Symbol Name</th><th>File Name</th></tr><tr style="vertical-align:top"><td><p>End to End Tests</p>
+</td><td><p>app.e2e-spec.ts</p>
+<p>heroes.e2e-spec.ts</p>
+</td></tr></table><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-02-12-a-angular-_ngmodule_-names"><a id="02-12"></a>Angular <em>NgModule</em> names</h3>
+<h4 id="-a-href-02-12-style-02-12-a-"><a href="#02-12">Style 02-12</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> append the symbol name with the suffix <code>Module</code>.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> give the file name the <code>.module.ts</code> extension.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name the module after the feature and folder it resides in.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Provides a consistent way to quickly identify and reference modules.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Upper camel case is conventional for identifying objects that can be instantiated using a constructor.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Easily identifies the module as the root of the same named feature.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> suffix a <em>RoutingModule</em> class name with <code>RoutingModule</code>.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> end the filename of a <em>RoutingModule</em> with <code>-routing.module.ts</code>.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> A <code>RoutingModule</code> is a module dedicated exclusively to configuring the Angular router.
+A consistent class and file name convention make these modules easy to spot and verify.</p>
+</div><table width="100%"><col width="50%"><col width="50%"><tr><th>Symbol Name</th><th>File Name</th></tr><tr style="vertical-align:top"><td><code-example>@NgModule({ ... })
+export class AppModule { }</code-example></td><td><p>app.module.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@NgModule({ ... })
+export class HeroesModule { }</code-example></td><td><p>heroes.module.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@NgModule({ ... })
+export class VillainsModule { }</code-example></td><td><p>villains.module.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@NgModule({ ... })
+export class AppRoutingModule { }</code-example></td><td><p>app-routing.module.ts</p>
+</td></tr><tr style="vertical-align:top"><td><code-example>@NgModule({ ... })
+export class HeroesRoutingModule { }</code-example></td><td><p>heroes-routing.module.ts        </p>
+</td></tr></table><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="coding-conventions">Coding conventions</h2>
+<p>Have consistent set of coding, naming, and whitespace conventions.</p>
+<div class="l-main-section"></div><h3 id="-a-id-03-01-a-classes"><a id="03-01"></a>Classes</h3>
+<h4 id="-a-href-03-01-style-03-01-a-"><a href="#03-01">Style 03-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use upper camel case when naming classes.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Follows conventional thinking for class names.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Classes can be instantiated and construct an instance. 
+By convention, upper camel case indicates a constructable asset.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/shared/exception.service.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+export class exceptionService {
+  constructor() { }
+}
+</code-example></div><div class="code-example"><header><h4>app/shared/exception.service.ts</h4></header><code-example language="ts" format="linenums">export class ExceptionService {
+  constructor() { }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-03-02-a-constants"><a id="03-02"></a>Constants</h3>
+<h4 id="-a-href-03-02-style-03-02-a-"><a href="#03-02">Style 03-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> declare variables with <code>const</code> if their values should not change during the application lifetime.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Conveys to readers that the value is invariant.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> TypeScript helps enforce that intent by requiring immediate initialization and by
+preventing subsequent re-assignment.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> spelling <code>const</code> variables in lower camel case.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Lower camel case variable names (<code>heroRoutes</code>) are easier to read and understand
+than the traditional UPPER_SNAKE_CASE names (<code>HERO_ROUTES</code>).</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The tradition of naming constants in UPPER_SNAKE_CASE reflects
+an era before the modern IDEs that quickly reveal the <code>const</code> declaration.
+TypeScript itself prevents accidental reassignment. </p>
+</div><div class="s-rule do"><p><strong>Do</strong> tolerate <em>existing</em> <code>const</code> variables that are spelled in UPPER_SNAKE_CASE.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The tradition of UPPER_SNAKE_CASE remains popular and pervasive,
+especially in third party modules.
+It is rarely worth the effort to change them at the risk of breaking existing code and documentation.</p>
+</div><div class="code-example"><header><h4>app/shared/data.service.ts</h4></header><code-example language="ts" format="linenums">export const mockHeroes   = [&#39;Sam&#39;, &#39;Jill&#39;]; // prefer
+export const heroesUrl    = &#39;api/heroes&#39;;    // prefer
+export const VILLAINS_URL = &#39;api/villains&#39;;  // tolerate
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-03-03-a-interfaces"><a id="03-03"></a>Interfaces</h3>
+<h4 id="-a-href-03-03-style-03-03-a-"><a href="#03-03">Style 03-03</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> name an interface using upper camel case.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> naming an interface without an <code>I</code> prefix.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> using a class instead of an interface. </p>
+</div><div class="s-why"><p><strong>Why?</strong> <a href="https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines" target="_blank">TypeScript guidelines</a> 
+discourage the <code>I</code> prefix.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A class alone is less code than a <em>class-plus-interface</em>.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A class can act as an interface (use <code>implements</code> instead of <code>extends</code>).</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> An interface-class can be a provider lookup token in Angular dependency injection.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/shared/hero-collector.service.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+import { Injectable } from &#39;@angular/core&#39;;
+
+import { IHero } from &#39;./hero.model.avoid&#39;;
+
+@Injectable()
+export class HeroCollectorService {
+  hero: IHero;
+
+  constructor() { }
+}
+</code-example></div><div class="code-example"><header><h4>app/shared/hero-collector.service.ts</h4></header><code-example language="ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+
+import { Hero } from &#39;./hero.model&#39;;
+
+@Injectable()
+export class HeroCollectorService {
+  hero: Hero;
+
+  constructor() { }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-03-04-a-properties-and-methods"><a id="03-04"></a>Properties and methods</h3>
+<h4 id="-a-href-03-04-style-03-04-a-"><a href="#03-04">Style 03-04</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use lower camel case to name properties and methods.</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> prefixing private properties and methods with an underscore.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Follows conventional thinking for properties and methods.</p>
+</div><div class="s-why"><p><strong>Why?</strong> JavaScript lacks a true private property or method.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> TypeScript tooling makes it easy to identify private vs public properties and methods.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/shared/toast.service.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+import { Injectable } from &#39;@angular/core&#39;;
+
+@Injectable()
+export class ToastService {
+  message: string;
+
+  private _toastCount: number;
+
+  hide() {
+    this._toastCount--;
+    this._log();
+  }
+
+  show() {
+    this._toastCount++;
+    this._log();
+  }
+
+  private _log() {
+    console.log(this.message);
+  }
+}
+</code-example></div><div class="code-example"><header><h4>app/shared/toast.service.ts</h4></header><code-example language="ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+
+@Injectable()
+export class ToastService {
+  message: string;
+
+  private toastCount: number;
+
+  hide() {
+    this.toastCount--;
+    this.log();
+  }
+
+  show() {
+    this.toastCount++;
+    this.log();
+  }
+
+  private log() {
+    console.log(this.message);
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-03-06-a-import-line-spacing"><a id="03-06"></a>Import line spacing</h3>
+<h4 id="-a-href-03-06-style-03-06-a-"><a href="#03-06">Style 03-06</a></h4>
+<div class="s-rule consider"><p><strong>Consider</strong> leaving one empty line between third party imports and application imports.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> listing import lines alphabetized by the module.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> listing destructured imported symbols alphabetically.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The empty line separates <em>your</em> stuff from <em>their</em> stuff.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Alphabetizing makes it easier to read and locate symbols.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/shared/hero.service.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+import { ExceptionService, SpinnerService, ToastService } from &#39;../../core&#39;;
+import { Http } from &#39;@angular/http&#39;;
+import { Injectable } from &#39;@angular/core&#39;;
+import { Hero } from &#39;./hero.model&#39;;
+</code-example></div><div class="code-example"><header><h4>app/heroes/shared/hero.service.ts</h4></header><code-example language="ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+import { Http }       from &#39;@angular/http&#39;;
+
+import { Hero } from &#39;./hero.model&#39;;
+import { ExceptionService, SpinnerService, ToastService } from &#39;../../core&#39;;
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="application-structure-and-angular-modules">Application structure and Angular modules</h2>
+<p>Have a near-term view of implementation and a long-term vision. Start small but keep in mind where the app is heading down the road.</p>
+<p>All of the app&#39;s code goes in a folder named <code>src</code>. 
+All feature areas are in their own folder, with their own Angular module. </p>
+<p>All content is one asset per file. Each component, service, and pipe is in its own file. 
+All third party vendor scripts are stored in another folder and not in the <code>src</code> folder. 
+You didn&#39;t write them and you don&#39;t want them cluttering <code>src</code>. 
+Use the naming conventions for files in this guide.</p>
+<a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-01-a-_lift_"><a id="04-01"></a><em>LIFT</em></h3>
+<h4 id="-a-href-04-01-style-04-01-a-"><a href="#04-01">Style 04-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> structure the app such that you can <code>L</code>ocate code quickly, 
+<code>I</code>dentify the code at a glance, 
+keep the <code>F</code>lattest structure you can, and 
+<code>T</code>ry to be DRY.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> define the structure to follow these four basic guidelines, listed in order of importance.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> LIFT Provides a consistent structure that scales well, is modular, and makes it easier to increase developer efficiency by finding code quickly. 
+To confirm your intuition about a particular structure, ask: 
+<em>can I quickly open and start work in all of the related files for this feature</em>?</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-02-a-locate"><a id="04-02"></a>Locate</h3>
+<h4 id="-a-href-04-02-style-04-02-a-"><a href="#04-02">Style 04-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> make locating code intuitive, simple and fast.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong><br>To work efficiently you must be able to find files quickly, 
+especially when you do not know (or do not remember) the file <em>names</em>. 
+Keeping related files near each other in an intuitive location saves time. 
+A descriptive folder structure makes a world of difference to you and the people who come after you.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-03-a-identify"><a id="04-03"></a>Identify</h3>
+<h4 id="-a-href-04-03-style-04-03-a-"><a href="#04-03">Style 04-03</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> name the file such that you instantly know what it contains and represents.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> be descriptive with file names and keep the contents of the file to exactly one component.</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> files with multiple components, multiple services, or a mixture.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Spend less time hunting and pecking for code, and become more efficient. 
+Longer file names are far better than <em>short-but-obscure</em> abbreviated names.</p>
+</div><div class="l-sub-section"><p>It may be advantageous to deviate from the <em>one-thing-per-file</em> rule when 
+you have a set of small, closely-related features that are better discovered and understood
+in a single file than as multiple files. Be wary of this loophole.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-04-a-flat"><a id="04-04"></a>Flat</h3>
+<h4 id="-a-href-04-04-style-04-04-a-"><a href="#04-04">Style 04-04</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> keep a flat folder structure as long as possible.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> creating sub-folders when a folder reaches seven or more files.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> configuring the IDE to hide distracting, irrelevant files such as generated <code>.js</code> and <code>.js.map</code> files.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> No one wants to search for a file through seven levels of folders. 
+A flat structure is easy to scan.</p>
+<p>On the other hand,
+<a href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two" target="_blank">psychologists believe</a>
+that humans start to struggle when the number of adjacent interesting things exceeds nine.
+So when a folder has ten or more files, it may be time to create subfolders. </p>
+<p>Base your decision on your comfort level. 
+Use a flatter structure until there is an obvious value to creating a new folder.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-05-a-_t-dry_-try-to-be-_dry_-"><a id="04-05"></a><em>T-DRY</em> (Try to be <em>DRY</em>)</h3>
+<h4 id="-a-href-04-05-style-04-05-a-"><a href="#04-05">Style 04-05</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> be DRY (Don&#39;t Repeat Yourself)</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> being so DRY that you sacrifice readability.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Being DRY is important, but not crucial if it sacrifices the other elements of LIFT.
+That&#39;s why it&#39;s called <em>T-DRY</em>. 
+For example, it&#39;s redundant to name a component, <code>hero-view.component.html</code> because a component is obviously a view. 
+But if something is not obvious or departs from a convention, then spell it out.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-06-a-overall-structural-guidelines"><a id="04-06"></a>Overall structural guidelines</h3>
+<h4 id="-a-href-04-06-style-04-06-a-"><a href="#04-06">Style 04-06</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> start small but keep in mind where the app is heading down the road.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> have a near term view of implementation and a long term vision.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> put all of the app&#39;s code in a folder named <code>src</code>.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> creating a folder for a component when it has multiple accompanying files (<code>.ts</code>, <code>.html</code>, <code>.css</code> and <code>.spec</code>).</p>
+</div><div class="s-why"><p><strong>Why?</strong> Helps keep the app structure small and easy to maintain in the early stages, while being easy to evolve as the app grows.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Components often have four files (e.g. <code>*.html</code>, <code>*.css</code>, <code>*.ts</code>, and <code>*.spec.ts</code>) and can clutter a folder quickly.</p>
+</div><a id="file-tree"></a><p>Here is a compliant folder and file structure:</p>
+<div class="filetree"><div class="file">&lt;project root&gt;</div><div class="children"><div class="file">src</div><div class="children"><div class="file">app</div><div class="children"><div class="file">core</div><div class="children"><div class="file">core.module.ts</div><div class="file">exception.service.ts|spec.ts</div><div class="file">user-profile.service.ts|spec.ts</div></div><div class="file">heroes</div><div class="children"><div class="file">hero</div><div class="children"><div class="file">hero.component.ts|html|css|spec.ts</div></div><div class="file">hero-list</div><div class="children"><div class="file">hero-list.component.ts|html|css|spec.ts</div></div><div class="file">shared</div><div class="children"><div class="file">hero-button.component.ts|html|css|spec.ts</div><div class="file">hero.model.ts</div><div class="file">hero.service.ts|spec.ts</div></div><div class="file">heroes.component.ts|html|css|spec.ts</div><div class="file">heroes.module.ts</div><div class="file">heroes-routing.module.ts</div></div><div class="file">shared</div><div class="children"><div class="file">shared.module.ts</div><div class="file">init-caps.pipe.ts|spec.ts</div><div class="file">text-filter.component.ts|spec.ts</div><div class="file">text-filter.service.ts|spec.ts</div></div><div class="file">villains</div><div class="children"><div class="file">villain</div><div class="children"><div class="file">...</div></div><div class="file">villain-list</div><div class="children"><div class="file">...</div></div><div class="file">shared</div><div class="children"><div class="file">...</div></div><div class="file">villains.component.ts|html|css|spec.ts</div><div class="file">villains.module.ts</div><div class="file">villains-routing.module.ts</div></div><div class="file">app.component.ts|html|css|spec.ts</div><div class="file">app.module.ts</div><div class="file">app-routing.module.ts</div></div><div class="file">main.ts</div><div class="file">index.html</div><div class="file">...</div></div><div class="file">node_modules/...</div><div class="file">...</div></div></div><div class="l-sub-section"><p>While components in dedicated folders are widely preferred, 
+another option for small apps is to keep components flat (not in a dedicated folder). 
+This adds up to four files to the existing folder, but also reduces the folder nesting. 
+Whatever you choose, be consistent.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-07-a-_folders-by-feature_-structure"><a id="04-07"></a><em>Folders-by-feature</em> structure</h3>
+<h4 id="-a-href-04-07-style-04-07-a-"><a href="#04-07">Style 04-07</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> create folders named for the feature area they represent.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A developer can locate the code, identify what each file represents 
+at a glance, the structure is as flat as it can be, and there are no repetitive or redundant names.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The LIFT guidelines are all covered.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Helps reduce the app from becoming cluttered through organizing the content and keeping them aligned with the LIFT guidelines.</p>
+</div><div class="s-why"><p><strong>Why?</strong> When there are a lot of files (e.g. 10+), locating them is easier with a consistent folder structure and more difficult in a flat structure.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> create an Angular module for each feature area.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Angular modules make it easy to lazy load routable features.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Angular modules make it easier to isolate, test, and re-use features.</p>
+</div><div class="file-tree-reference"><a href="#file-tree">Refer to this _folder and file structure_ example.</a></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-08-a-app-_root-module_"><a id="04-08"></a>App <em>root module</em></h3>
+<h4 id="-a-href-04-08-style-04-08-a-"><a href="#04-08">Style 04-08</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> create an Angular module in the app&#39;s root folder (e.g., in <code>/src/app</code>).</p>
+</div><div class="s-why"><p><strong>Why?</strong> Every app requires at least one root Angular module.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> naming the root module <code>app.module.ts</code>.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Makes it easier to locate and identify the root module.</p>
+</div><div class="code-example"><header><h4>app/app.module.ts</h4></header><code-example language="ts" format="linenums">import { NgModule }      from &#39;@angular/core&#39;;
+import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+
+import { AppComponent }    from &#39;./app.component&#39;;
+import { HeroesComponent } from &#39;./heroes/heroes.component&#39;;
+
+@NgModule({
+  imports: [
+    BrowserModule,
+  ],
+  declarations: [
+    AppComponent,
+    HeroesComponent
+  ],
+  exports: [ AppComponent ],
+  entryComponents: [ AppComponent ]
+})
+export class AppModule {}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-09-a-feature-modules"><a id="04-09"></a>Feature modules</h3>
+<h4 id="-a-href-04-09-style-04-09-a-"><a href="#04-09">Style 04-09</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> create an Angular module for all distinct features in an application (e.g. <code>Heroes</code> feature).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> place the feature module in the same named folder as the feature area (.e.g <code>app/heroes</code>).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name the feature module file reflecting the name of the feature area and folder (e.g. <code>app/heroes/heroes.module.ts</code>)</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name the feature module symbol reflecting the name of the feature area, folder, and file (e.g. <code>app/heroes/heroes.module.ts</code> defines <code>HeroesModule</code>)</p>
+</div><div class="s-why"><p><strong>Why?</strong> A feature module can expose or hide its implementation from other modules.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A feature module identifies distinct sets of related components that comprise the feature area. </p>
+</div><div class="s-why"><p><strong>Why?</strong> A feature module can easily be routed to both eagerly and lazily. </p>
+</div><div class="s-why"><p><strong>Why?</strong> A feature module defines clear boundaries between specific functionality and other application features. </p>
+</div><div class="s-why"><p><strong>Why?</strong> A feature module helps clarify and make it easier to assign development responsibilities to different teams.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> A feature module can easily be isolated for testing.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-10-a-shared-feature-module"><a id="04-10"></a>Shared feature module</h3>
+<h4 id="-a-href-04-10-style-04-10-a-"><a href="#04-10">Style 04-10</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> create a feature module named <code>SharedModule</code> in a <code>shared</code> folder (e.g. <code>app/shared/shared.module.ts</code> defines <code>SharedModule</code>).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> declare components, directives, and pipes in a shared module when those 
+items will be re-used and referenced by the components declared in other feature modules.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> using the name SharedModule, when the contents of a shared 
+module are referenced across the entire application.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> not provide services in shared modules. Services are usually 
+singletons that are provided once for the entire application or 
+in a particular feature module.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> import all modules required by the assets in the <code>SharedModule</code> (e.g. <code>CommonModule</code> and <code>FormsModule</code>).</p>
+</div><div class="s-why"><p><strong>Why?</strong> <code>SharedModule</code> will contain components, directives and pipes that may need features from another common module (e.g. <code>ngFor</code> in <code>CommonModule</code>).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> declare all components, directives, and pipes in the <code>SharedModule</code>.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> export all symbols from the <code>SharedModule</code> that other feature modules need to use.  </p>
+</div><div class="s-why"><p><strong>Why?</strong> <code>SharedModule</code> exists to make commonly used components, directives and pipes available for use in the templates of components in many other modules.</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> specifying app-wide singleton providers in a <code>SharedModule</code>. Intentional singletons are OK. Take care.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A lazy loaded feature module that imports that shared module will make its own copy of the service and likely have undesireable results.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> You don&#39;t want each module to have its own separate instance of singleton services. 
+Yet there is a real danger of that happening if the <code>SharedModule</code> provides a service.</p>
+</div><div class="filetree"><div class="file">src</div><div class="children"><div class="file">app</div><div class="children"><div class="file">shared</div><div class="children"><div class="file">shared.module.ts</div><div class="file">init-caps.pipe.ts|spec.ts</div><div class="file">text-filter.component.ts|spec.ts</div><div class="file">text-filter.service.ts|spec.ts</div></div><div class="file">app.component.ts|html|css|spec.ts</div><div class="file">app.module.ts</div><div class="file">app-routing.module.ts</div></div><div class="file">main.ts</div><div class="file">index.html</div></div><div class="file">...</div></div><code-tabs><code-pane language="ts" name="app/shared/shared.module.ts" format="linenums">import { NgModule }      from &#39;@angular/core&#39;;
+import { CommonModule }  from &#39;@angular/common&#39;;
+import { FormsModule }   from &#39;@angular/forms&#39;;
+
+import { FilterTextComponent } from &#39;./filter-text/filter-text.component&#39;;
+import { FilterTextService }   from &#39;./filter-text/filter-text.service&#39;;
+import { InitCapsPipe }        from &#39;./init-caps.pipe&#39;;
+
+@NgModule({
+  imports: [CommonModule, FormsModule],
+  declarations: [
+    FilterTextComponent,
+    InitCapsPipe
+  ],
+  providers: [FilterTextService],
+  exports: [
+    CommonModule,
+    FormsModule,
+    FilterTextComponent,
+    InitCapsPipe
+  ]
+})
+export class SharedModule { }
+</code-pane><code-pane language="ts" name="app/shared/init-caps.pipe.ts" format="linenums">import { Pipe, PipeTransform } from &#39;@angular/core&#39;;
+
+@Pipe({ name: &#39;initCaps&#39; })
+export class InitCapsPipe implements PipeTransform {
+  transform = (value: string) =&gt; value;
+}
+</code-pane><code-pane language="ts" name="app/shared/filter-text/filter-text.component.ts" format="linenums">import { Component, EventEmitter, Output } from &#39;@angular/core&#39;;
+
+@Component({
+  selector: &#39;toh-filter-text&#39;,
+  template: &#39;&lt;input type=&quot;text&quot; id=&quot;filterText&quot; [(ngModel)]=&quot;filter&quot; (keyup)=&quot;filterChanged($event)&quot; /&gt;&#39;
+})
+export class FilterTextComponent {
+  @Output() changed: EventEmitter&lt;string&gt;;
+
+  filter: string;
+
+  constructor() {
+    this.changed = new EventEmitter&lt;string&gt;();
+  }
+
+  clear() {
+    this.filter = &#39;&#39;;
+  }
+
+  filterChanged(event: any) {
+    event.preventDefault();
+    console.log(`Filter Changed: ${this.filter}`);
+    this.changed.emit(this.filter);
+  }
+}
+</code-pane><code-pane language="ts" name="app/shared/filter-text/filter-text.service.ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+
+@Injectable()
+export class FilterTextService {
+  constructor() {
+    console.log(&#39;Created an instance of FilterTextService&#39;);
+  }
+
+  filter(data: string, props: Array&lt;string&gt;, originalList: Array&lt;any&gt;) {
+    let filteredList: any[];
+    if (data &amp;&amp; props &amp;&amp; originalList) {
+      data = data.toLowerCase();
+      let filtered = originalList.filter(item =&gt; {
+        let match = false;
+        for (let prop of props) {
+          if (item[prop].toString().toLowerCase().indexOf(data) &gt; -1) {
+            match = true;
+            break;
+          }
+        };
+        return match;
+      });
+      filteredList = filtered;
+    } else {
+      filteredList = originalList;
+    }
+    return filteredList;
+  }
+}
+</code-pane><code-pane language="ts" name="app/heroes/heroes.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+import { FilterTextService } from &#39;../shared/filter-text/filter-text.service&#39;;
+
+@Component({
+  selector: &#39;toh-heroes&#39;,
+  templateUrl: &#39;./heroes.component.html&#39;
+})
+export class HeroesComponent {
+
+  heroes = [
+    { id: 1, name: &#39;Windstorm&#39; },
+    { id: 2, name: &#39;Bombasto&#39; },
+    { id: 3, name: &#39;Magneta&#39; },
+    { id: 4, name: &#39;Tornado&#39; }
+  ];
+
+  filteredHeroes = this.heroes;
+
+  constructor(private filterService: FilterTextService) { }
+
+  filterChanged(searchText: string) {
+    this.filteredHeroes = this.filterService.filter(searchText, [&#39;id&#39;, &#39;name&#39;], this.heroes);
+  }
+}
+</code-pane><code-pane language="html
+  " name="app/heroes/heroes.component.html" format="linenums">&lt;div&gt;This is heroes component&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li *ngFor=&quot;let hero of filteredHeroes&quot;&gt;
+    {{hero.name}}
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;toh-filter-text (changed)=&quot;filterChanged($event)&quot;&gt;&lt;/toh-filter-text&gt;
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-11-a-core-feature-module"><a id="04-11"></a>Core feature module</h3>
+<h4 id="-a-href-04-11-style-04-11-a-"><a href="#04-11">Style 04-11</a></h4>
+<div class="s-rule consider"><p><strong>Consider</strong> collecting numerous, auxiliary, single-use classes inside a core module
+to simplify the apparent structure of a feature module.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> calling the application-wide core module, <code>CoreModule</code>.
+Importing <code>CoreModule</code> into the root <code>AppModule</code> reduces its complexity 
+and emphasizes its role as orchestrator of the application as a whole.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> create a feature module named <code>CoreModule</code> in a <code>core</code> folder (e.g. <code>app/core/core.module.ts</code> defines <code>CoreModule</code>).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> put a singleton service whose instance wil be shared throughout the application in the <code>CoreModule</code> (e.g. <code>ExceptionService</code> and <code>LoggerService</code>).</p>
+</div><div class="s-rule do"><p><strong>Do</strong> import all modules required by the assets in the <code>CoreModule</code> (e.g. <code>CommonModule</code> and <code>FormsModule</code>).</p>
+</div><div class="s-why"><p><strong>Why?</strong> <code>CoreModule</code> provides one or more singleton services. Angular registers the providers with the app root injector, making a singleton instance of each service available to any component that needs them, whether that component is eagerly or lazily loaded.</p>
+</div><div class="s-why"><p><strong>Why?</strong> <code>CoreModule</code> will contain singleton services. When a lazy loaded module imports these, it will get a new instance and not the intended app-wide singleton.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> gather application-wide, single use components in the <code>CoreModule</code>.
+Import it once (in the <code>AppModule</code>) when the app starts and never import it anywhere else. (e.g. <code>NavComponent</code> and <code>SpinnerComponent</code>).</p>
+</div><div class="s-why"><p><strong>Why?</strong> Real world apps can have several single-use components (e.g., spinners, message toasts, and modal dialogs) that appear only in the <code>AppComponent</code> template. 
+They are not imported elsewhere so they&#39;re not shared in that sense. 
+Yet they&#39;re too big and messy to leave loose in the root folder.</p>
+</div><div class="s-rule avoid"><p><strong>Avoid</strong> importing the <code>CoreModule</code> anywhere except in the <code>AppModule</code>.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A lazily loaded feature module that directly imports the <code>CoreModule</code> will make its own copy of services and likely have undesireable results.</p>
+</div><div class="s-why"><p><strong>Why?</strong> An eagerly loaded feature module already has access to the <code>AppModule</code>&#39;s injector, and thus the <code>CoreModule</code>&#39;s services. </p>
+</div><div class="s-rule do"><p><strong>Do</strong> export all symbols from the <code>CoreModule</code> that the <code>AppModule</code> will import and make available for other feature modules to use.  </p>
+</div><div class="s-why"><p><strong>Why?</strong> <code>CoreModule</code> exists to make commonly used singleton services available for use in the many other modules.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> You want the entire app to use the one, singleton instance.
+You don&#39;t want each module to have its own separate instance of singleton services. 
+Yet there is a real danger of that happening accidentally if the <code>CoreModule</code> provides a service.</p>
+</div><div class="filetree"><div class="file">src</div><div class="children"><div class="file">app</div><div class="children"><div class="file">core</div><div class="children"><div class="file">core.module.ts</div><div class="file">logger.service.ts|spec.ts</div><div class="file">nav</div><div class="children"><div class="file">nav.component.ts|html|css|spec.ts</div></div><div class="file">spinner</div><div class="children"><div class="file">spinner.component.ts|html|css|spec.ts</div><div class="file">spinner.service.ts|spec.ts</div></div></div><div class="file">app.component.ts|html|css|spec.ts</div><div class="file">app.module.ts</div><div class="file">app-routing.module.ts</div></div><div class="file">main.ts</div><div class="file">index.html</div></div><div class="file">...</div></div><code-tabs><code-pane language="ts" name="app/app.module.ts" format="linenums">import { NgModule }      from &#39;@angular/core&#39;;
+import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+
+import { AppComponent }   from &#39;./app.component&#39;;
+import { HeroesComponent } from &#39;./heroes/heroes.component&#39;;
+import { CoreModule }    from &#39;./core/core.module&#39;;
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    CoreModule,
+  ],
+  declarations: [
+    AppComponent,
+    HeroesComponent
+  ],
+  exports: [ AppComponent ],
+  entryComponents: [ AppComponent ]
+})
+export class AppModule {}
+</code-pane><code-pane language="ts" name="app/core/core.module.ts" format="linenums">import { NgModule } from &#39;@angular/core&#39;;
+import { CommonModule } from &#39;@angular/common&#39;;
+
+import { LoggerService } from &#39;./logger.service&#39;;
+import { NavComponent } from &#39;./nav/nav.component&#39;;
+import { SpinnerComponent } from &#39;./spinner/spinner.component&#39;;
+import { SpinnerService } from &#39;./spinner/spinner.service&#39;;
+
+@NgModule({
+  imports: [
+    CommonModule // we use ngFor
+  ],
+  exports: [NavComponent, SpinnerComponent],
+  declarations: [NavComponent, SpinnerComponent],
+  providers: [LoggerService, SpinnerService]
+})
+export class CoreModule { }
+</code-pane><code-pane language="ts" name="app/core/logger.service.ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+
+@Injectable()
+export class LoggerService {
+  log(msg: string) {
+    console.log(msg);
+  }
+
+  error(msg: string) {
+    console.error(msg);
+  }
+}
+</code-pane><code-pane language="ts" name="app/core/nav/nav.component.ts" format="linenums">import { Component, OnInit } from &#39;@angular/core&#39;;
+
+@Component({
+  selector: &#39;toh-nav&#39;,
+  templateUrl: &#39;./nav.component.html&#39;,
+  styleUrls: [&#39;./nav.component.css&#39;],
+})
+export class NavComponent implements OnInit {
+  menuItems = [
+    &#39;Heroes&#39;,
+    &#39;Villains&#39;,
+    &#39;Other&#39;
+  ];
+
+  ngOnInit() {  }
+
+  constructor() { }
+}
+</code-pane><code-pane language="html" name="app/core/nav/nav.component.html" format="linenums">&lt;header&gt;
+  &lt;div&gt;
+    &lt;h4&gt;Tour of Heroes&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li *ngFor=&quot;let item of menuItems&quot;&gt;
+        {{item}}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;br/&gt;
+&lt;/header&gt;
+</code-pane><code-pane language="ts" name="app/core/spinner/spinner.component.ts" format="linenums">import { Component, OnDestroy, OnInit } from &#39;@angular/core&#39;;
+import { Subscription } from &#39;rxjs/Subscription&#39;;
+
+import { LoggerService } from &#39;../logger.service&#39;;
+import { SpinnerState, SpinnerService } from &#39;./spinner.service&#39;;
+
+@Component({
+  selector: &#39;toh-spinner&#39;,
+  templateUrl: &#39;./spinner.component.html&#39;,
+  styleUrls: [&#39;./spinner.component.css&#39;]
+})
+export class SpinnerComponent implements OnDestroy, OnInit {
+  visible = false;
+
+  private spinnerStateChanged: Subscription;
+
+  constructor(
+    private loggerService: LoggerService,
+    private spinnerService: SpinnerService
+  ) { }
+
+  ngOnInit() {
+    console.log(this.visible);
+    this.spinnerStateChanged = this.spinnerService.spinnerState
+      .subscribe((state: SpinnerState) =&gt; {
+        this.visible = state.show;
+        this.loggerService.log(`visible=${this.visible}`);
+      });
+  }
+
+  ngOnDestroy() {
+    this.spinnerStateChanged.unsubscribe();
+  }
+}
+</code-pane><code-pane language="html" name="app/core/spinner/spinner.component.html" format="linenums">&lt;div class=&quot;spinner&quot; [class.spinner-hidden]=&quot;!visible&quot;&gt; &lt;/div&gt;
+</code-pane><code-pane language="ts
+  " name="app/core/spinner/spinner.service.ts" format="linenums">import { Injectable } from &#39;@angular/core&#39;;
+import { Subject } from &#39;rxjs/Subject&#39;;
+
+export interface SpinnerState {
+  show: boolean;
+}
+
+@Injectable()
+export class SpinnerService {
+  private spinnerSubject = new Subject&lt;SpinnerState&gt;();
+
+  spinnerState = this.spinnerSubject.asObservable();
+
+  constructor() { }
+
+  show() {
+    this.spinnerSubject.next(&lt;SpinnerState&gt;{ show: true });
+  }
+
+  hide() {
+    this.spinnerSubject.next(&lt;SpinnerState&gt;{ show: false });
+  }
+}
+</code-pane></code-tabs><div class="l-sub-section"><p><code>AppModule</code> is a little smaller because many app/root classes have moved to other modules. 
+<code>AppModule</code> is stable because you will add future components and providers to other modules, not this one. 
+<code>AppModule</code> delegates to imported modules rather than doing work. 
+<code>AppModule</code> is focused on its main task, orchestrating the app as a whole.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-12-a-prevent-re-import-of-the-core-module"><a id="04-12"></a>Prevent re-import of the core module</h3>
+<h4 id="-a-href-04-12-style-04-12-a-"><a href="#04-12">Style 04-12</a></h4>
+<p>Only the root <code>AppModule</code> should import the <code>CoreModule</code>. </p>
+<div class="s-rule do"><p><strong>Do</strong> guard against reimporting of <code>CoreModule</code> and fail fast by adding guard logic.</p>
+</div><div class="s-why s-why"><p><strong>Why?</strong> Guards against reimporting of the <code>CoreModule</code>.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Guards against creating multiple instances of assets intended to be singletons.</p>
+</div><code-tabs><code-pane language="ts" name="app/core/module-import-guard.ts" format="linenums">export function throwIfAlreadyLoaded(parentModule: any, moduleName: string) {
+  if (parentModule) {
+    throw new Error(`${moduleName} has already been loaded. Import Core modules in the AppModule only.`);
+  }
+}
+</code-pane><code-pane language="ts
+  " name="app/core/core.module.ts" format="linenums">import { NgModule, Optional, SkipSelf } from &#39;@angular/core&#39;;
+import { CommonModule } from &#39;@angular/common&#39;;
+
+import { LoggerService } from &#39;./logger.service&#39;;
+import { NavComponent } from &#39;./nav/nav.component&#39;;
+import { throwIfAlreadyLoaded } from &#39;./module-import-guard&#39;;
+
+@NgModule({
+  imports: [
+    CommonModule // we use ngFor
+  ],
+  exports: [NavComponent],
+  declarations: [NavComponent],
+  providers: [LoggerService]
+})
+export class CoreModule {
+  constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
+    throwIfAlreadyLoaded(parentModule, &#39;CoreModule&#39;);
+  }
+}
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-13-a-lazy-loaded-folders"><a id="04-13"></a>Lazy Loaded folders</h3>
+<h4 id="-a-href-04-13-style-04-13-a-"><a href="#04-13">Style 04-13</a></h4>
+<p>A distinct application feature or workflow may be <em>lazy loaded</em> or <em>loaded on demand</em> rather than when the application starts.</p>
+<div class="s-rule do"><p><strong>Do</strong> put the contents of lazy loaded features in a <em>lazy loaded folder</em>.
+A typical <em>lazy loaded folder</em> contains a <em>routing component</em>, its child components, and their related assets and modules.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The folder makes it easy to identify and isolate the feature content.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-04-14-a-never-directly-import-lazy-loaded-folders"><a id="04-14"></a>Never directly import lazy loaded folders</h3>
+<h4 id="-a-href-04-14-style-04-14-a-"><a href="#04-14">Style 04-14</a></h4>
+<div class="s-rule avoid"><p><strong>Avoid</strong> allowing modules in sibling and parent folders to directly import a module in a <em>lazy loaded feature</em>.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Directly importing and using a module will load it immediately when the intention is to load it on demand.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="components">Components</h2>
+<h3 id="-a-id-05-02-a-component-selector-names"><a id="05-02"></a>Component selector names</h3>
+<h4 id="-a-href-05-02-style-05-02-a-"><a href="#05-02">Style 05-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use <em>dashed-case</em> or <em>kebab-case</em> for naming the element selectors of components.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Keeps the element names consistent with the specification for <a href="https://www.w3.org/TR/custom-elements/">Custom Elements</a>.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/shared/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;tohHeroButton&#39;,
+  templateUrl: &#39;./hero-button.component.html&#39;
+})
+export class HeroButtonComponent {}
+</code-example></div><code-tabs><code-pane language="ts" name="app/heroes/shared/hero-button/hero-button.component.ts" format="linenums">@Component({
+  selector: &#39;toh-hero-button&#39;,
+  templateUrl: &#39;./hero-button.component.html&#39;
+})
+export class HeroButtonComponent {}
+</code-pane><code-pane language="html" name="app/app.component.html" format="linenums">&lt;toh-hero-button&gt;&lt;/toh-hero-button&gt;
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-03-a-components-as-elements"><a id="05-03"></a>Components as elements</h3>
+<h4 id="-a-href-05-03-style-05-03-a-"><a href="#05-03">Style 05-03</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> give components an <em>element</em> selector, as opposed to <em>attribute</em> or <em>class</em> selectors.</p>
+</div><div class="s-why"><p><strong>Why?</strong> components have templates containing HTML and optional Angular template syntax.
+They display content. 
+Developers place components on the page as they would native HTML elements and WebComponents.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> It is easier to recognize that a symbol is a component by looking at the template&#39;s html.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;[tohHeroButton]&#39;,
+  templateUrl: &#39;./hero-button.component.html&#39;
+})
+export class HeroButtonComponent {}
+</code-example></div><div class="code-example is-anti-pattern"><header><h4>app/app.component.html</h4></header><code-example language="html" format="linenums">&lt;!-- avoid --&gt;
+
+&lt;div tohHeroButton&gt;&lt;/div&gt;
+</code-example></div><code-tabs><code-pane language="ts" name="app/heroes/shared/hero-button/hero-button.component.ts" format="linenums">@Component({
+  selector: &#39;toh-hero-button&#39;,
+  templateUrl: &#39;./hero-button.component.html&#39;
+})
+export class HeroButtonComponent {}
+</code-pane><code-pane language="html" name="app/app.component.html" format="linenums">&lt;toh-hero-button&gt;&lt;/toh-hero-button&gt;
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-04-a-extract-templates-and-styles-to-their-own-files"><a id="05-04"></a>Extract templates and styles to their own files</h3>
+<h4 id="-a-href-05-04-style-05-04-a-"><a href="#05-04">Style 05-04</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> extract templates and styles into a separate file, when more than 3 lines.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name the template file <code>[component-name].component.html</code>, where [component-name] is the component name.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name the style file <code>[component-name].component.css</code>, where [component-name] is the component name.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> specify <em>component-relative</em> URLs, prefixed with <code>./</code>.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Large, inline templates and styles obscure the component&#39;s purpose and implementation, reducing readability and maintainability.</p>
+</div><div class="s-why"><p><strong>Why?</strong> In most editors, syntax hints and code snippets aren&#39;t available when developing inline templates and styles.
+The Angular TypeScript Language Service (forthcoming) promises to overcome this deficiency for HTML templates
+in those editors that support it; it won&#39;t help with CSS styles.</p>
+</div><div class="s-why"><p><strong>Why?</strong> A <em>component relative</em> URL requires no change when you move the component files, as long as the files stay together.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The <code>./</code> prefix is standard syntax for relative URLs; don&#39;t depend on Angular&#39;s current ability to do without that prefix.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/heroes.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;toh-heroes&#39;,
+  template: `
+    &lt;div&gt;
+      &lt;h2&gt;My Heroes&lt;/h2&gt;
+      &lt;ul class=&quot;heroes&quot;&gt;
+        &lt;li *ngFor=&quot;let hero of heroes | async&quot; (click)=&quot;selectedHero=hero&quot;&gt;
+          &lt;span class=&quot;badge&quot;&gt;{{hero.id}}&lt;/span&gt; {{hero.name}}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div *ngIf=&quot;selectedHero&quot;&gt;
+        &lt;h2&gt;{{selectedHero.name | uppercase}} is my hero&lt;/h2&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  styles: [`
+    .heroes {
+      margin: 0 0 2em 0; list-style-type: none; padding: 0; width: 15em;
+    }
+    .heroes li {
+      cursor: pointer;
+      position: relative;
+      left: 0;
+      background-color: #EEE;
+      margin: .5em;
+      padding: .3em 0;
+      height: 1.6em;
+      border-radius: 4px;
+    }
+    .heroes .badge {
+      display: inline-block;
+      font-size: small;
+      color: white;
+      padding: 0.8em 0.7em 0 0.7em;
+      background-color: #607D8B;
+      line-height: 1em;
+      position: relative;
+      left: -1px;
+      top: -4px;
+      height: 1.8em;
+      margin-right: .8em;
+      border-radius: 4px 0 0 4px;
+    }
+  `]
+})
+export class HeroesComponent implements OnInit {
+  heroes: Observable&lt;Hero[]&gt;;
+  selectedHero: Hero;
+
+ constructor(private heroService: HeroService) { }
+
+  ngOnInit() {
+    this.heroes = this.heroService.getHeroes();
+  }
+}
+</code-example></div><code-tabs><code-pane language="ts" name="app/heroes/heroes.component.ts" format="linenums">@Component({
+  selector: &#39;toh-heroes&#39;,
+  templateUrl: &#39;./heroes.component.html&#39;,
+  styleUrls:  [&#39;./heroes.component.css&#39;]
+})
+export class HeroesComponent implements OnInit {
+  heroes: Observable&lt;Hero[]&gt;;
+  selectedHero: Hero;
+
+ constructor(private heroService: HeroService) { }
+
+  ngOnInit() {
+    this.heroes = this.heroService.getHeroes();
+  }
+}
+</code-pane><code-pane language="html" name="app/heroes/heroes.component.html" format="linenums">&lt;div&gt;
+  &lt;h2&gt;My Heroes&lt;/h2&gt;
+  &lt;ul class=&quot;heroes&quot;&gt;
+    &lt;li *ngFor=&quot;let hero of heroes | async&quot; (click)=&quot;selectedHero=hero&quot;&gt;
+      &lt;span class=&quot;badge&quot;&gt;{{hero.id}}&lt;/span&gt; {{hero.name}}
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div *ngIf=&quot;selectedHero&quot;&gt;
+    &lt;h2&gt;{{selectedHero.name | uppercase}} is my hero&lt;/h2&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code-pane><code-pane language="css" name="app/heroes/heroes.component.css" format="linenums">.heroes {
+  margin: 0 0 2em 0; list-style-type: none; padding: 0; width: 15em;
+}
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-12-a-decorate-_input_-and-_output_-properties"><a id="05-12"></a>Decorate <em>input</em> and <em>output</em> properties</h3>
+<h4 id="-a-href-05-12-style-05-12-a-"><a href="#05-12">Style 05-12</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use the <code>@Input</code> and <code>@Output</code> class decorators instead of the <code>inputs</code> and <code>outputs</code> properties of the 
+<code>@Directive</code> and <code>@Component</code> metadata:</p>
+</div><div class="s-rule do"><p><strong>Consider</strong> placing <code>@Input()</code> or <code>@Output()</code> on the same line as the property it decorates.</p>
+</div><div class="s-why"><p><strong>Why?</strong> It is easier and more readable to identify which properties in a class are inputs or outputs.</p>
+</div><div class="s-why"><p><strong>Why?</strong> If you ever need to rename the property or event name associated with 
+<code>@Input</code> or <code>@Output</code>, you can modify it in a single place.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The metadata declaration attached to the directive is shorter and thus more readable.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Placing the decorator on the same line <em>usually</em> makes for shorter code and still easily identifies the property as an input or output.
+Put it on the line above when doing so is clearly more readable.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/shared/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;toh-hero-button&#39;,
+  template: `&lt;button&gt;&lt;/button&gt;`,
+  inputs: [
+    &#39;label&#39;
+  ],
+  outputs: [
+    &#39;change&#39;
+  ]
+})
+export class HeroButtonComponent {
+  change = new EventEmitter&lt;any&gt;();
+  label: string;
+}
+</code-example></div><div class="code-example"><header><h4>app/heroes/shared/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">@Component({
+  selector: &#39;toh-hero-button&#39;,
+  template: `&lt;button&gt;{{label}}&lt;/button&gt;`
+})
+export class HeroButtonComponent {
+  @Output() change = new EventEmitter&lt;any&gt;();
+  @Input() label: string;
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-13-a-avoid-aliasing-_inputs_-and-_outputs_"><a id="05-13"></a>Avoid aliasing <em>inputs</em> and <em>outputs</em></h3>
+<h4 id="-a-href-05-13-style-05-13-a-"><a href="#05-13">Style 05-13</a></h4>
+<div class="s-rule avoid"><p><strong>Avoid</strong> <em>input</em> and <em>output</em> aliases except when it serves an important purpose.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Two names for the same property (one private, one public) is inherently confusing.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> You should use an alias when the directive name is also an <em>input</em> property, 
+and the directive name doesn&#39;t describe the property.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/shared/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid pointless aliasing */
+
+@Component({
+  selector: &#39;toh-hero-button&#39;,
+  template: `&lt;button&gt;{{label}}&lt;/button&gt;`
+})
+export class HeroButtonComponent {
+  // Pointless aliases
+  @Output(&#39;changeEvent&#39;) change = new EventEmitter&lt;any&gt;();
+  @Input(&#39;labelAttribute&#39;) label: string;
+}
+</code-example></div><div class="code-example is-anti-pattern"><header><h4>app/app.component.html</h4></header><code-example language="html" format="linenums">&lt;!-- avoid --&gt;
+
+&lt;toh-hero-button labelAttribute=&quot;OK&quot; (changeEvent)=&quot;doSomething()&quot;&gt;
+&lt;/toh-hero-button&gt;
+</code-example></div><code-tabs><code-pane language="ts" name="app/heroes/shared/hero-button/hero-button.component.ts" format="linenums">@Component({
+  selector: &#39;toh-hero-button&#39;,
+  template: `&lt;button&gt;{{label}}&lt;/button&gt;`
+})
+export class HeroButtonComponent {
+  // No aliases
+  @Output() change = new EventEmitter&lt;any&gt;();
+  @Input() label: string;
+}
+</code-pane><code-pane language="ts" name="app/heroes/shared/hero-button/hero-highlight.directive.ts" format="linenums">import { Directive, ElementRef, Input, OnChanges } from &#39;@angular/core&#39;;
+
+@Directive({ selector: &#39;[heroHighlight]&#39; })
+export class HeroHighlightDirective implements OnChanges {
+
+  // Aliased because `color` is a better property name than `heroHighlight`
+  @Input(&#39;heroHighlight&#39;) color: string;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnChanges() {
+    this.el.nativeElement.style.backgroundColor = this.color || &#39;yellow&#39;;
+  }
+}
+</code-pane><code-pane language="html" name="app/app.component.html" format="linenums">&lt;toh-hero-button label=&quot;OK&quot; (change)=&quot;doSomething()&quot;&gt;
+&lt;/toh-hero-button&gt;
+
+&lt;!-- `heroHighlight` is both the directive name and the data-bound aliased property name --&gt;
+&lt;h3 heroHighlight=&quot;skyblue&quot;&gt;The Great Bombasto&lt;/h3&gt;
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-14-a-member-sequence"><a id="05-14"></a>Member sequence</h3>
+<h4 id="-a-href-05-14-style-05-14-a-"><a href="#05-14">Style 05-14</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> place properties up top followed by methods.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> place private members after public members, alphabetized.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Placing members in a consistent sequence makes it easy to read and 
+helps instantly identify which members of the component serve which purpose.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/shared/toast/toast.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+export class ToastComponent implements OnInit {
+
+  private defaults = {
+    title: &#39;&#39;,
+    message: &#39;May the Force be with you&#39;
+  };
+  message: string;
+  title: string;
+  private toastElement: any;
+
+  ngOnInit() {
+    this.toastElement = document.getElementById(&#39;toh-toast&#39;);
+  }
+
+  // private methods
+  private hide() {
+    this.toastElement.style.opacity = 0;
+    window.setTimeout(() =&gt; this.toastElement.style.zIndex = 0, 400);
+  }
+
+  activate(message = this.defaults.message, title = this.defaults.title) {
+    this.title = title;
+    this.message = message;
+    this.show();
+  }
+
+  private show() {
+    console.log(this.message);
+    this.toastElement.style.opacity = 1;
+    this.toastElement.style.zIndex = 9999;
+
+    window.setTimeout(() =&gt; this.hide(), 2500);
+  }
+}
+</code-example></div><div class="code-example"><header><h4>app/shared/toast/toast.component.ts</h4></header><code-example language="ts" format="linenums">export class ToastComponent implements OnInit {
+  // public properties
+  message: string;
+  title: string;
+
+  // private fields
+  private defaults = {
+    title: &#39;&#39;,
+    message: &#39;May the Force be with you&#39;
+  };
+  private toastElement: any;
+
+  // public methods
+  activate(message = this.defaults.message, title = this.defaults.title) {
+    this.title = title;
+    this.message = message;
+    this.show();
+  }
+
+  ngOnInit() {
+    this.toastElement = document.getElementById(&#39;toh-toast&#39;);
+  }
+
+  // private methods
+  private hide() {
+    this.toastElement.style.opacity = 0;
+    window.setTimeout(() =&gt; this.toastElement.style.zIndex = 0, 400);
+  }
+
+  private show() {
+    console.log(this.message);
+    this.toastElement.style.opacity = 1;
+    this.toastElement.style.zIndex = 9999;
+    window.setTimeout(() =&gt; this.hide(), 2500);
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-15-a-delegate-complex-component-logic-to-services"><a id="05-15"></a>Delegate complex component logic to services</h3>
+<h4 id="-a-href-05-15-style-05-15-a-"><a href="#05-15">Style 05-15</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> limit logic in a component to only that required for the view. All other logic should be delegated to services.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> move reusable logic to services and keep components simple and focused on their intended purpose.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Logic may be reused by multiple components when placed within a service and exposed via a function.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Logic in a service can more easily be isolated in a unit test, while the calling logic in the component can be easily mocked.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Removes dependencies and hides implementation details from the component.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Keeps the component slim, trim, and focused.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/hero-list/hero-list.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+import { OnInit } from &#39;@angular/core&#39;;
+import { Http, Response } from &#39;@angular/http&#39;;
+
+import { Observable } from &#39;rxjs/Observable&#39;;
+import &#39;rxjs/add/operator/catch&#39;;
+import &#39;rxjs/add/operator/finally&#39;;
+import &#39;rxjs/add/operator/map&#39;;
+
+import { Hero } from &#39;../shared/hero.model&#39;;
+
+const heroesUrl = &#39;http://angular.io&#39;;
+
+export class HeroListComponent implements OnInit {
+  heroes: Hero[];
+  constructor(private http: Http) {}
+  getHeroes() {
+    this.heroes = [];
+    this.http.get(heroesUrl)
+      .map((response: Response) =&gt; &lt;Hero[]&gt;response.json().data)
+      .catch(this.catchBadResponse)
+      .finally(() =&gt; this.hideSpinner())
+      .subscribe((heroes: Hero[]) =&gt; this.heroes = heroes);
+  }
+  ngOnInit() {
+    this.getHeroes();
+  }
+
+  private catchBadResponse(err: any, source: Observable&lt;any&gt;) {
+    // log and handle the exception
+    return new Observable();
+  }
+
+  private hideSpinner() {
+    // hide the spinner
+  }
+}
+</code-example></div><div class="code-example"><header><h4>app/heroes/hero-list/hero-list.component.ts</h4></header><code-example language="ts" format="linenums">import { Component, OnInit } from &#39;@angular/core&#39;;
+
+import { Hero, HeroService } from &#39;../shared&#39;;
+
+@Component({
+  selector: &#39;toh-hero-list&#39;,
+  template: `...`
+})
+export class HeroListComponent implements OnInit {
+  heroes: Hero[];
+  constructor(private heroService: HeroService) {}
+  getHeroes() {
+    this.heroes = [];
+    this.heroService.getHeroes()
+      .subscribe(heroes =&gt; this.heroes = heroes);
+  }
+  ngOnInit() {
+    this.getHeroes();
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-16-a-don-t-prefix-_output_-properties"><a id="05-16"></a>Don&#39;t prefix <em>output</em> properties</h3>
+<h4 id="-a-href-05-16-style-05-16-a-"><a href="#05-16">Style 05-16</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> name events without the prefix <code>on</code>.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> name event handler methods with the prefix <code>on</code> followed by the event name.</p>
+</div><div class="s-why"><p><strong>Why?</strong> This is consistent with built-in events such as button clicks.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Angular allows for an <a href="template-syntax.html#binding-syntax">alternative syntax</a> <code>on-*</code>. If the event itself was prefixed with <code>on</code> this would result in an <code>on-onEvent</code> binding expression.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/hero.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;toh-hero&#39;,
+  template: `...`
+})
+export class HeroComponent {
+  @Output() onSavedTheDay = new EventEmitter&lt;boolean&gt;();
+}
+</code-example></div><div class="code-example is-anti-pattern"><header><h4>app/app.component.html</h4></header><code-example language="html" format="linenums">&lt;!-- avoid --&gt;
+
+&lt;toh-hero (onSavedTheDay)=&quot;onSavedTheDay($event)&quot;&gt;&lt;/toh-hero&gt;
+</code-example></div><code-tabs><code-pane language="ts" name="app/heroes/hero.component.ts" format="linenums">export class HeroComponent {
+  @Output() savedTheDay = new EventEmitter&lt;boolean&gt;();
+}
+</code-pane><code-pane language="html" name="app/app.component.html" format="linenums">&lt;toh-hero (savedTheDay)=&quot;onSavedTheDay($event)&quot;&gt;&lt;/toh-hero&gt;
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-05-17-a-put-presentation-logic-in-the-component-class"><a id="05-17"></a>Put presentation logic in the component class</h3>
+<h4 id="-a-href-05-17-style-05-17-a-"><a href="#05-17">Style 05-17</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> put presentation logic in the component class, and not in the template.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Logic will be contained in one place (the component class) instead of being spread in two places.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Keeping the component&#39;s presentation logic in the class instead of the template improves testability, maintainability, and reusability.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/hero-list/hero-list.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;toh-hero-list&#39;,
+  template: `
+    &lt;section&gt;
+      Our list of heroes:
+      &lt;hero-profile *ngFor=&quot;let hero of heroes&quot; [hero]=&quot;hero&quot;&gt;
+      &lt;/hero-profile&gt;
+      Total powers: {{totalPowers}}&lt;br&gt;
+      Average power: {{totalPowers / heroes.length}}
+    &lt;/section&gt;
+  `
+})
+export class HeroListComponent {
+  heroes: Hero[];
+  totalPowers: number;
+}
+</code-example></div><div class="code-example"><header><h4>app/heroes/hero-list/hero-list.component.ts</h4></header><code-example language="ts" format="linenums">@Component({
+  selector: &#39;toh-hero-list&#39;,
+  template: `
+    &lt;section&gt;
+      Our list of heroes:
+      &lt;toh-hero *ngFor=&quot;let hero of heroes&quot; [hero]=&quot;hero&quot;&gt;
+      &lt;/toh-hero&gt;
+      Total powers: {{totalPowers}}&lt;br&gt;
+      Average power: {{avgPower}}
+    &lt;/section&gt;
+  `
+})
+export class HeroListComponent {
+  heroes: Hero[];
+  totalPowers: number;
+
+  get avgPower() {
+    return this.totalPowers / this.heroes.length;
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="directives">Directives</h2>
+<a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-06-01-a-use-directives-to-enhance-an-element"><a id="06-01"></a>Use directives to enhance an element</h3>
+<h4 id="-a-href-06-01-style-06-01-a-"><a href="#06-01">Style 06-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use attribute directives when you have presentation logic without a template.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Attributes directives don&#39;t have an associated template.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> An element may have more than one attribute directive applied.</p>
+</div><div class="code-example"><header><h4>app/shared/highlight.directive.ts</h4></header><code-example language="ts" format="linenums">@Directive({
+  selector: &#39;[tohHighlight]&#39;
+})
+export class HighlightDirective {
+  @HostListener(&#39;mouseover&#39;) onMouseEnter() {
+    // do highlight work
+  }
+}
+</code-example></div><div class="code-example"><header><h4>app/app.component.html</h4></header><code-example language="html" format="">&lt;div tohHighlight&gt;Bombasta&lt;/div&gt;
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-06-03-a-_hostlistener_-_hostbinding_-decorators-versus-_host_-metadata"><a id="06-03"></a><em>HostListener</em>/<em>HostBinding</em> decorators versus <em>host</em> metadata</h3>
+<h4 id="-a-href-06-03-style-06-03-a-"><a href="#06-03">Style 06-03</a></h4>
+<div class="s-rule consider"><p><strong>Consider</strong> preferring the <code>@HostListener</code> and <code>@HostBinding</code> to the 
+<code>host</code> property of the <code>@Directive</code> and <code>@Component</code> decorators.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> be consistent in your choice.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The property associated with <code>@HostBinding</code> or the method associated with <code>@HostListener</code> 
+can be modified only in a single place - in the directive&#39;s class. 
+If you use the <code>host</code> metadata property, you must modify both the property declaration inside the controller, 
+and the metadata associated with the directive.</p>
+</div><div class="code-example"><header><h4>app/shared/validator.directive.ts</h4></header><code-example language="ts" format="linenums">import { Directive, HostBinding, HostListener } from &#39;@angular/core&#39;;
+
+@Directive({
+  selector: &#39;[tohValidator]&#39;
+})
+export class ValidatorDirective {
+  @HostBinding(&#39;attr.role&#39;) role = &#39;button&#39;;
+  @HostListener(&#39;mouseenter&#39;) onMouseEnter() {
+    // do work
+  }
+}
+</code-example></div><p>Compare with the less preferred <code>host</code> metadata alternative.</p>
+<div class="s-why s-why-last"><p><strong>Why?</strong> The <code>host</code> metadata is only one term to remember and doesn&#39;t require extra ES imports.</p>
+</div><div class="code-example"><header><h4>app/shared/validator2.directive.ts</h4></header><code-example language="ts" format="linenums">import { Directive } from &#39;@angular/core&#39;;
+
+@Directive({
+  selector: &#39;[tohValidator2]&#39;,
+  host: {
+    &#39;attr.role&#39;: &#39;button&#39;,
+    &#39;(mouseenter)&#39;: &#39;onMouseEnter()&#39;
+  }
+})
+export class Validator2Directive {
+  role = &#39;button&#39;;
+  onMouseEnter() {
+    // do work
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="services">Services</h2>
+<h3 id="-a-id-07-01-a-services-are-singletons"><a id="07-01"></a>Services are singletons</h3>
+<h4 id="-a-href-07-01-style-07-01-a-"><a href="#07-01">Style 07-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use services as singletons within the same injector. Use them for sharing data and functionality.</p>
+</div><div class="s-why"><p><strong>Why?</strong> Services are ideal for sharing methods across a feature area or an app.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Services are ideal for sharing stateful in-memory data.</p>
+</div><div class="code-example"><header><h4>app/heroes/shared/hero.service.ts</h4></header><code-example language="ts" format="linenums">export class HeroService {
+  constructor(private http: Http) { }
+
+  getHeroes() {
+    return this.http.get(&#39;api/heroes&#39;)
+      .map((response: Response) =&gt; &lt;Hero[]&gt;response.json().data);
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-07-02-a-single-responsibility"><a id="07-02"></a>Single responsibility</h3>
+<h4 id="-a-href-07-02-style-07-02-a-"><a href="#07-02">Style 07-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> create services with a single responsibility that is encapsulated by its context.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> create a new service once the service begins to exceed that singular purpose.</p>
+</div><div class="s-why"><p><strong>Why?</strong> When a service has multiple responsibilities, it becomes difficult to test.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> When a service has multiple responsibilities, every component or service that injects it now carries the weight of them all.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-07-03-a-providing-a-service"><a id="07-03"></a>Providing a service</h3>
+<h4 id="-a-href-07-03-style-07-03-a-"><a href="#07-03">Style 07-03</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> provide services to the Angular injector at the top-most component where they will be shared.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The Angular injector is hierarchical.</p>
+</div><div class="s-why"><p><strong>Why?</strong> When providing the service to a top level component, 
+that instance is shared and available to all child components of that top level component.</p>
+</div><div class="s-why"><p><strong>Why?</strong> This is ideal when a service is sharing methods or state.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> This is not ideal when two different components need different instances of a service. In this scenario it would be better to provide the service at the component level that needs the new and separate instance.</p>
+</div><code-tabs><code-pane language="ts" name="app/app.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+import { HeroService } from &#39;./heroes&#39;;
+
+@Component({
+  selector: &#39;toh-app&#39;,
+  template: `
+      &lt;toh-heroes&gt;&lt;/toh-heroes&gt;
+    `,
+  providers: [HeroService]
+})
+export class AppComponent {}
+</code-pane><code-pane language="ts" name="app/heroes/hero-list/hero-list.component.ts" format="linenums">import { Component, OnInit } from &#39;@angular/core&#39;;
+
+import { Hero, HeroService } from &#39;../shared&#39;;
+
+@Component({
+  selector: &#39;toh-heroes&#39;,
+  template: `
+      &lt;pre&gt;{{heroes | json}}&lt;/pre&gt;
+    `
+})
+export class HeroListComponent implements OnInit {
+  heroes: Hero[] = [];
+
+  constructor(private heroService: HeroService) { }
+
+  ngOnInit() {
+    this.heroService.getHeroes().subscribe(heroes =&gt; this.heroes = heroes);
+  }
+}
+</code-pane></code-tabs><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-07-04-a-use-the-injectable-class-decorator"><a id="07-04"></a>Use the @Injectable() class decorator</h3>
+<h4 id="-a-href-07-04-style-07-04-a-"><a href="#07-04">Style 07-04</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use the <code>@Injectable</code> class decorator instead of the <code>@Inject</code> parameter decorator when using types as tokens for the dependencies of a service.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The Angular Dependency Injection (DI) mechanism resolves a service&#39;s own 
+dependencies based on the declared types of that service&#39;s constructor parameters.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> When a service accepts only dependencies associated with type tokens, the <code>@Injectable()</code> syntax is much less verbose compared to using <code>@Inject()</code> on each individual constructor parameter.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/shared/hero-arena.service.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+export class HeroArena {
+  constructor(
+      @Inject(HeroService) private heroService: HeroService,
+      @Inject(Http) private http: Http) {}
+}
+</code-example></div><div class="code-example"><header><h4>app/heroes/shared/hero-arena.service.ts</h4></header><code-example language="ts" format="linenums">@Injectable()
+export class HeroArena {
+  constructor(
+    private heroService: HeroService,
+    private http: Http) {}
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="data-services">Data Services</h2>
+<h3 id="-a-id-08-01-a-talk-to-the-server-through-a-service"><a id="08-01"></a>Talk to the server through a service</h3>
+<h4 id="-a-href-08-01-style-08-01-a-"><a href="#08-01">Style 08-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> refactor logic for making data operations and interacting with data to a service.</p>
+</div><div class="s-rule do"><p><strong>Do</strong> make data services responsible for XHR calls, local storage, stashing in memory, or any other data operations.</p>
+</div><div class="s-why"><p><strong>Why?</strong> The component&#39;s responsibility is for the presentation and gathering of information for the view. It should not care how it gets the data, just that it knows who to ask for it. Separating the data services moves the logic on how to get it to the data service, and lets the component be simpler and more focused on the view.</p>
+</div><div class="s-why"><p><strong>Why?</strong> This makes it easier to test (mock or real) the data calls when testing a component that uses a data service.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> The details of data management, such as headers, HTTP methods, 
+caching, error handling, and retry logic, are irrelevant to components 
+and other data consumers.</p>
+<p>A data service encapsulates these details. It&#39;s easier to evolve these 
+details inside the service without affecting its consumers. And it&#39;s 
+easier to test the consumers with mock service implementations.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="lifecycle-hooks">Lifecycle hooks</h2>
+<p>Use Lifecycle hooks to tap into important events exposed by Angular.</p>
+<a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-09-01-a-implement-lifecycle-hook-interfaces"><a id="09-01"></a>Implement lifecycle hook interfaces</h3>
+<h4 id="-a-href-09-01-style-09-01-a-"><a href="#09-01">Style 09-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> implement the lifecycle hook interfaces.</p>
+</div><div class="s-why s-why-last"><p><strong>Why?</strong> Lifecycle interfaces prescribe typed method 
+signatures. use those signatures to flag spelling and syntax mistakes.</p>
+</div><div class="code-example is-anti-pattern"><header><h4>app/heroes/shared/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">/* avoid */
+
+@Component({
+  selector: &#39;toh-hero-button&#39;,
+  template: `&lt;button&gt;OK&lt;button&gt;`
+})
+export class HeroButtonComponent {
+  onInit() { // misspelled
+    console.log(&#39;The component is initialized&#39;);
+  }
+}
+</code-example></div><div class="code-example"><header><h4>app/heroes/shared/hero-button/hero-button.component.ts</h4></header><code-example language="ts" format="linenums">@Component({
+  selector: &#39;toh-hero-button&#39;,
+  template: `&lt;button&gt;OK&lt;/button&gt;`
+})
+export class HeroButtonComponent implements OnInit {
+  ngOnInit() {
+    console.log(&#39;The component is initialized&#39;);
+  }
+}
+</code-example></div><a href="#toc">Back to top</a><div class="l-main-section"></div><h2 id="appendix">Appendix</h2>
+<p>Useful tools and tips for Angular.</p>
+<a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-a-01-a-codelyzer"><a id="A-01"></a>Codelyzer</h3>
+<h4 id="-a-href-a-01-style-a-01-a-"><a href="#A-01">Style A-01</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use <a href="https://www.npmjs.com/package/codelyzer">codelyzer</a> to follow this guide.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> adjusting the rules in codelyzer to suit your needs.</p>
+</div><a href="#toc">Back to top</a><div class="l-main-section"></div><h3 id="-a-id-a-02-a-file-templates-and-snippets"><a id="A-02"></a>File templates and snippets</h3>
+<h4 id="-a-href-a-02-style-a-02-a-"><a href="#A-02">Style A-02</a></h4>
+<div class="s-rule do"><p><strong>Do</strong> use file templates or snippets to help follow consistent styles and patterns. Here are templates and/or snippets for some of the web development editors and IDEs.</p>
+</div><div class="s-rule consider"><p><strong>Consider</strong> using <a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">snippets</a> for <a href="https://code.visualstudio.com/">Visual Studio Code</a> that follow these styles and guidelines.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">
+  <img src="https://github.com/johnpapa/vscode-angular2-snippets/raw/master/images/use-extension.gif" width="80%" alt="Use Extension">
+</a>  </p>
+<p><strong>Consider</strong> using <a href="https://atom.io/packages/angular-2-typescript-snippets">snippets</a> for <a href="https://atom.io/">Atom</a> that follow these styles and guidelines.</p>
+<p><strong>Consider</strong> using <a href="https://github.com/orizens/sublime-angular2-snippets">snippets</a> for <a href="http://www.sublimetext.com/">Sublime Text</a> that follow these styles and guidelines.</p>
+<p><strong>Consider</strong> using <a href="https://github.com/mhartington/vim-angular2-snippets">snippets</a> for <a href="http://www.vim.org/">Vim</a> that follow these styles and guidelines.</p>
+</div><a href="#toc">Back to top</a><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div data-swiftype-index="false" class="main-footer"><nav class="background-midnight grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">RESOURCES</h3><ul class="text-body"><!-- TODO: (ericjim) make a libraries page to showcase all angular libraries--><!--li <a href="/libraries.html">Libraries</a>--><li><a href="/about/">About</a></li><li><a href="/resources/#Education">Books & Training</a></li><li><a href="/resources/">Tools & Libraries</a></li><li><a href="/resources/">Community</a></li><li><a href="/presskit.html">Press Kit</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="http://stackoverflow.com/questions/tagged/angular2">Stack Overflow</a></li><li><a href="https://gitter.im/angular/angular">Gitter</a></li><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://github.com/angular/angular/issues"> Report Issues</a></li><li><a class="footer-feedback" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"> Site Feedback</a></li></ul></div><div class="c2"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="/events.html">Events</a></li><li><a href="http://www.meetup.com/topics/angularjs/">Meetups</a></li><li><a href="https://twitter.com/angular"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li><li><a href="/contribute.html"> Contribute</a></li></ul></div><div class="c2"><h3 class="text-headline">LANGUAGES</h3><ul class="text-body"><li><a href="https://angular.cn/">中文版</a></li></ul></div></nav><footer class="background-midnight"><small class="text-caption">Powered by Google ©2010-2017. Code licensed under an <a href="/license">MIT-style License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</small><a aria-label="View Style Guide" href="/docs/ts/latest/styleguide.html" title="Style Guide" class="styleguide-trigger"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><script src="/resources/js/vendor/clipboard.min.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script><!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/util.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/controllers/resources-controller.js"></script><script src="/resources/js/directives/cheatsheet.js"></script><script src="/resources/js/directives/api-list.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/bold.js"></script><script src="/resources/js/directives/announcement-bar.js"></script><script src="/resources/js/directives/code.js"></script><script src="/resources/js/directives/copy.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><script src="/resources/js/directives/if-docs.js"></script><script src="/resources/js/directives/live-example.js"></script><script src="/resources/js/directives/ngio-ex-path.js"></script><script src="/resources/js/directives/scroll-y-offset-element.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-8594346-15', 'auto');
+ga('send', 'pageview')
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK','2.0.0');
+
+</script><!-- Google Feedback --><script src="//www.gstatic.com/feedback/api.js" type="text/javascript"></script><!-- Twitter Widget --><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}})(document,"script","twitter-wjs");</script></body></html>

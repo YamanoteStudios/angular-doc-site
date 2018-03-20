@@ -1,0 +1,611 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><!-- template: public/docs/_layout--><head><title>Deployment - ts - GUIDE</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl as appCtrl" class="l-offset-nav l-offset-side-nav"><nav data-swiftype-index="false" scroll-y-offset-element="scroll-y-offset-element" class="main-nav l-pinned-top l-layer-5"><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/events.html" md-button>Events</a></li><li class="l-right"><a class="main-nav-button" href="/docs/ts/latest/quickstart.html" md-button>Get Started</a></li></ul></nav><!-- Include this file ONLY when current.path[2] is defined--><nav data-swiftype-index="false" ng-class="appCtrl.showDocsNav ? 'is-visible' : ''" class="sidenav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="sidenav-search st-input-wrapper"><div class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="text" placeholder="SEARCH DOCS..." class="st-default-search-input"/></div><button aria-label="View Docs Menu" ng-click="appCtrl.toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><ul class="sidenav-links"><li class="sidenav-section no-border"><a href="/docs/ts/latest/" class="nav-title">Docs Home</a></li><!-- CORE DOCUMENTATION--><li class="sidenav-section-divider"><h3>Core Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/quickstart.html" title="Quickstart" class="nav-title ">Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/cli-quickstart.html" title="CLI Quickstart" class="nav-title ">CLI Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/" title="How to read and use this documentation." class="nav-title is-parent ">Guide<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/" title="How to read and use this documentation.">1. Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/setup.html" title="Install the Angular QuickStart seed for faster, more efficient development on your machine.">2. Setup</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/learning-angular.html" title="A suggested path through the documentation for Angular newcomers.">3. Learning Angular</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/architecture.html" title="The basic building blocks of Angular applications.">4. Architecture</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/appmodule.html" title="Tell Angular how to construct and bootstrap the app in the root &quot;AppModule&quot;.">5. The Root Module</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/displaying-data.html" title="Property binding helps show app data in the UI.">6. Displaying Data</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/user-input.html" title="User input triggers DOM events. We listen to those events with event bindings that funnel updated values back into our components and models.">7. User Input</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/forms.html" title="A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors.">8. Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/dependency-injection.html" title="Angular's dependency injection system creates and delivers dependent services &quot;just-in-time&quot;.">9. Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/template-syntax.html" title="Learn how to write templates that display data and consume user events with the help of data binding.">10. Template Syntax</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/cheatsheet.html" title="Cheat Sheet">11. Cheat Sheet</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/style-guide.html" title="Write Angular with style.">12. Style Guide</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/glossary.html" title="Brief definitions of the most important words in the Angular vocabulary.">13. Glossary</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/change-log.html" title="An annotated history of recent documentation improvements.">14. Change Log</a></li></ul></div></li><li class="sidenav-section no-border"><a href="/docs/ts/latest/api/" title="API Reference" class="nav-title ">API Reference</a></li><!-- ADVANCED DOCUMENATION--><li class="sidenav-section-divider"><h3>Additional Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript." class="nav-title is-parent ">Tutorial<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript.">1. Introduction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt1.html" title="We build a simple hero editor.">2. The Hero Editor</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt2.html" title="We build a master/detail page with a list of heroes.">3. Master/Detail</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt3.html" title="We refactor the master/detail view into separate components.">4. Multiple Components</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt4.html" title="We create a reusable service to manage our hero data calls.">5. Services</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt5.html" title="We add the Angular Router and learn to navigate among the views.">6. Routing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt6.html" title="We convert our service and components to use Angular's HTTP service.">7. HTTP</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system." class="nav-title is-parent is-selected">Advanced<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system.">Animations</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements.">Attribute Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/browser-support.html" title="Browser support and polyfills guide.">Browser support</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/component-styles.html" title="Learn how to apply CSS styles to components.">Component Styles</a></li><li class="nav-list-item is-selected"><a href="/docs/ts/latest/guide/deployment.html" title="Learn how to deploy your Angular app.">Deployment</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" title="Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.">Hierarchical Injectors</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/reactive-forms.html" title="Create a reactive form using FormBuilder, groups, and arrays.">Reactive Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/server-communication.html" title="Use an HTTP Client to talk to a remote server.">HTTP Client</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/lifecycle-hooks.html" title="Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them.">Lifecycle Hooks</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule.">NgModules</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/npm-packages.html" title="Recommended npm packages, and how to specify package dependencies.">Npm Packages</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/pipes.html" title="Pipes transform displayed values within a template.">Pipes</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/router.html" title="Discover the basics of screen navigation with the Angular Router.">Routing &amp; Navigation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/security.html" title="Developing for content security in Angular applications.">Security</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/setup-systemjs-anatomy.html" title="Inside the local development environment for SystemJS.">Setup Anatomy</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/structural-directives.html" title="Angular has a powerful template engine that lets us easily manipulate the DOM structure of our elements.">Structural Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/testing.html" title="Techniques and practices for testing an Angular app.">Testing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/typescript-configuration.html" title="TypeScript configuration for Angular developers.">TypeScript Configuration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/upgrade.html" title="Incrementally upgrade an AngularJS application to Angular.">Upgrading from AngularJS</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/webpack.html" title="Create Angular applications with a Webpack based tooling.">Webpack: an introduction</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios." class="nav-title is-parent ">Cookbook<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios.">Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/aot-compiler.html" title="Learn how to use Ahead-of-time compilation.">Ahead-of-Time Compilation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ajs-quick-reference.html" title="Learn how AngularJS concepts and techniques map to Angular.">AngularJS to Angular</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-communication.html" title="Share information between different directives and components.">Component Interaction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dependency-injection.html" title="Techniques for Dependency Injection.">Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-component-loader.html" title="Load components dynamically.">Dynamic Component Loader</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-form.html" title="Render dynamic forms with FormGroup.">Dynamic Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/form-validation.html" title="Validate user's form entries.">Form Validation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/i18n.html" title="Translate the app's template text into multiple languages.">Internationalization (i18n)</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ngmodule-faq.html" title="Answers to frequently asked questions about @NgModule.">NgModule FAQs</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/set-document-title.html" title="Setting the document or window title using the Title service.">Set the Document Title</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ts-to-js.html" title="Convert Angular TypeScript examples into ES6 and ES5 JavaScript.">TypeScript to JavaScript</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/visual-studio-2015.html" title="Use Visual Studio 2015 with the QuickStart files.">Visual Studio 2015 QuickStart</a></li></ul></div></li></ul><nav class="dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="appCtrl.toggleVersionMenu($event)" class="dropdown-button">Angular for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="appCtrl.toggleVersionMenu($event)" ng-show="appCtrl.showMenu" class="overlay ng-hide"></div><ul ng-class="appCtrl.showMenu ? 'is-visible' : ''" class="dropdown-menu"><li><a href="/docs/ts/latest/guide/deployment.html" md-button>Angular for TypeScript </a></li><li><a href="/docs/js/latest/guide/deployment.html" md-button>Angular for JavaScript </a></li></ul></nav></nav><script>// Could put in appCtrl but only needed here and clear here
+(function scrollToSelectedLink() {
+  var sideNav = document.getElementsByClassName('sidenav')[0];
+  var link = sideNav.getElementsByClassName('is-selected')[0];
+  if(link && link.offsetTop > window.innerHeight){
+    sideNav.scrollTop = link.offsetTop - (window.innerHeight/2);
+    //alert("offsetTop: " + link.offsetTop + " side-nav top is " + sideNav.scrollTop);
+  }
+})()</script><header class="hero background-sky"><h1 class="hero-title ">Deployment </h1><div class="clear"></div></header><div class="banner"><p class="text-body">Learn how to deploy your Angular app.</p></div><article class="l-content-small grid-fluid docs-content"><script>function why(id, backTo) {
+  var id = "#"+id;
+  var el = document.querySelector(id);
+  el.hidden=el.hidden=!el.hidden;
+
+  if (el.hidden && backTo){
+    // the next line is required to work around a bug in WebKit (Chrome / Safari)
+    location.href = "#";
+    location.href =  "#" + backTo;
+  }
+}</script><script>function verbose(isVerbose) {
+  isVerbose = !! isVerbose;
+  var el = document.querySelector('button.verbose.off');
+  el.style.display = isVerbose ? 'block' : 'none';
+  var el = document.querySelector('button.verbose.on');
+  el.style.display = isVerbose ? 'none' : 'block';
+
+  CCSStylesheetRuleStyle('main','.l-verbose-section', 'display',
+    isVerbose ? 'block' : 'none');
+}
+</script><script>function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
+  /* returns the value of the element style of the rule in the stylesheet
+  *  If no value is given, reads the value
+  *  If value is given, the value is changed and returned
+  *  If '' (empty string) is given, erases the value.
+  *  The browser will apply the default one
+  *
+  * string stylesheet: part of the .css name to be recognized, e.g. 'default'
+  * string selectorText: css selector, e.g. '#myId', '.myClass', 'thead td'
+  * string style: camelCase element style, e.g. 'fontSize'
+  * string value optional : the new value
+  */
+  var CCSstyle = undefined, rules, sheet;
+  for(var m in document.styleSheets){
+    sheet = document.styleSheets[m];
+    if(sheet.href && sheet.href.indexOf(stylesheet) != -1){
+    rules = sheet[document.all ? 'rules' : 'cssRules'];
+    for(var n in rules){
+      console.log(rules[n].selectorText);
+      if(rules[n].selectorText == selectorText){
+        CCSstyle = rules[n].style;
+        break;
+      }
+    }
+    break;
+    }
+  }
+  if(value == undefined)
+    return CCSstyle[style]
+  else
+    return CCSstyle[style] = value
+}
+</script><p>This page describes tools and techniques for deploy and optimize your Angular application.</p>
+<a id="toc"></a><h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#dev-deploy">Simplest deployment possible</a></li>
+<li><a href="#optimize">Optimize for production</a><ul>
+<li><a href="#aot">Ahead-of-Time (AOT) compilation</a></li>
+<li><a href="#webpack">Webpack</a></li>
+<li><a href="#rollup">Tree shaking with <em>rollup</em></a></li>
+<li><a href="#prune">Pruned libraries</a></li>
+<li><a href="#measure">Measure performance first</a></li>
+</ul>
+</li>
+<li><a href="#angular-configuration">Angular configuration</a><ul>
+<li><a href="#base-tag">The <code>base</code> tag</a></li>
+<li><a href="#enable-prod-mode">Enable production mode</a></li>
+<li><a href="#lazy-loading">Lazy loading</a></li>
+</ul>
+</li>
+<li><a href="#server-configuration">Server configuration</a><ul>
+<li><a href="#fallback">Routed apps must fallback to <code>index.html</code></a>  </li>
+<li><a href="#cors">CORS: requesting services from a different server</a></li>
+</ul>
+</li>
+</ul>
+<a id="overview"></a><div class="l-main-section"></div><h2 id="overview">Overview</h2>
+<p>This guide describes techniques for preparing and deploying an Angular application to a server running remotely.
+The techniques progress from <em>easy but suboptimal</em> to <em>more optimal and more involved</em>.</p>
+<ul>
+<li><p>The <a href="#dev-deploy" title="Simplest deployment possible">simple way</a> is to copy the development environment to the server.</p>
+</li>
+<li><p><a href="#aot" title="AOT Compilation"><em>Ahead of Time</em> compilation (AOT)</a> is the first of 
+<a href="#optimize">several optimization strategies</a>. 
+You&#39;ll also want to read the <a href="../cookbook/aot-compiler.html" title="AOT Cookbook">detailed instructions in the AOT Cookbook</a>.</p>
+</li>
+<li><p><a href="#webpack" title="Webpack Optimization">Webpack</a> is a popular general purpose packaging tool with a rich ecosystem, including plugins for AOT.
+The Angular <a href="webpack.html" title="Webpack: an introduction">webpack guide</a> can get you started and
+<em>this</em> page provides additional optimization advice, but you&#39;ll probably have to learn more about webpack on your own.</p>
+</li>
+<li><p>The <a href="#angular-configuration" title="Angular configuration">Angular configuration</a> section calls attention to
+specific client application changes that could improve performance.</p>
+</li>
+<li><p>The <a href="#server-configuration" title="Server configuration">Server configuration</a> section describes
+server-side changes that may be necessary, <em>no matter how you deploy the application</em>.</p>
+</li>
+</ul>
+<div class="l-main-section"></div><a id="dev-deploy"></a><h2 id="simplest-deployment-possible">Simplest deployment possible</h2>
+<p>The simplest way to deploy the app is to publish it to a web server
+directly out of the development environment.</p>
+<p>It&#39;s already running locally. You&#39;ll just copy it, almost <em>as is</em>, 
+to a non-local server that others can reach.</p>
+<ol>
+<li><p>Copy <em>everything</em> (or <a href="#node-modules" title="Loading npm packages from the web"><em>almost</em> everything</a>) 
+from the local project folder to a folder on the server.</p>
+</li>
+<li><p>If you&#39;re serving the app out of a subfolder,
+edit a version of <code>index.html</code> to set the <code>&lt;base href&gt;</code> appropriately. 
+For example, if the URL to <code>index.html</code> is <code>www.mysite.com/my/app/</code>, set the <em>base href</em>  to 
+<code>&lt;base href=&quot;/my/app/&quot;&gt;</code>.
+Otherwise, leave it alone.
+<a href="#base-tag">More on this below</a>.</p>
+</li>
+<li><p>Configure the server to redirect requests for missing files to <code>index.html</code>.
+<a href="#fallback">More on this below</a>.</p>
+</li>
+<li><p>Enable production mode as <a href="#enable-prod-mode">described below</a> (optional).</p>
+</li>
+</ol>
+<p>That&#39;s the simplest deployment you can do.</p>
+<div class="alert is-helpful"><p>This is <em>not</em> a production deployment. It&#39;s not optimized and it won&#39;t be fast for users.
+It might be good enough for sharing your progress and ideas internally with managers, teammates, and other stakeholders.
+Be sure to read about <a href="#optimize" title="Optimizing for production">optimizing for production</a> below.</p>
+</div><a id="node-modules"></a><h3 id="load-npm-package-files-from-the-web-systemjs-">Load npm package files from the web (SystemJS)</h3>
+<p>The <code>node_modules</code> folder of <em>npm packages</em> contains much more code 
+than is needed to actually run your app in the browser.
+The <code>node_modules</code> for the Quickstart installation is typically 20,500+ files and 180+ MB.
+The application itself requires a tiny fraction of that to run.</p>
+<p>It takes a long time to upload all of that useless bulk and 
+users will wait unnecessarily while library files download piecemeal.</p>
+<p>Load the few files you need from the web instead.</p>
+<p>(1) Make a copy of <code>index.html</code> for deployment and replace all <code>node_module</code> scripts
+with versions that load from the web. It might look like this.</p>
+<div class="code-example"><code-example language="html" format="">&lt;!-- Polyfills --&gt;
+&lt;script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Update these package versions as needed --&gt;
+&lt;script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;&gt;&lt;/script&gt;
+</code-example></div><p>(2) Replace the <code>systemjs.config.js</code> script with a script that 
+loads <code>systemjs.config.server.js</code>.</p>
+<div class="code-example"><code-example language="html" format="">&lt;!-- This SystemJS configuration loads umd packages from the web --&gt;
+&lt;script src=&quot;systemjs.config.server.js&quot;&gt;&lt;/script&gt;
+</code-example></div><p>(3) Add <code>systemjs.config.server.js</code> (shown in the code sample below) to the <code>src/</code> folder.
+This alternative version configures <em>SystemJS</em> to load <em>UMD</em> versions of Angular 
+(and other third-party packages) from the web.</p>
+<p>Modify <code>systemjs.config.server.js</code> as necessary to stay in sync with changes
+you make to <code>systemjs.config.js</code>.</p>
+<p>Notice the <code>paths</code> key:</p>
+<div class="code-example"><code-example language="js" format="">paths: {
+  &#39;npm:&#39;: &#39;https://unpkg.com/&#39; // path serves as alias
+},
+</code-example></div><p>In the standard SystemJS config, the <code>npm</code> path points to the <code>node_modules/</code>.
+In this server config, it points to 
+<a href="https://unpkg.com/" target="_blank" title="unpkg.com">https://unpkg.com</a>, 
+a site that hosts <em>npm packages</em>,
+and loads them from the web directly.
+There are other service providers that do the same thing.</p>
+<p>If you are unwilling or unable to load packages from the open web, 
+the inventory in <code>systemjs.config.server.js</code> identifies the files and folders that 
+you would copy to a library folder on the server. 
+Then change the config&#39;s  <code>&#39;npm&#39;</code> path to point to that folder.</p>
+<h3 id="practice-with-an-example">Practice with an example</h3>
+<p>The following trivial router sample app shows these changes.</p>
+<code-tabs><code-pane language="html" name="index.html" format="linenums">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- Doesn&#39;t load from node_modules! --&gt;
+
+    &lt;!-- Set the base href --&gt;
+    &lt;base href=&quot;/&quot;&gt;
+    &lt;title&gt;Simple Deployment&lt;/title&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+
+    &lt;!-- Polyfills --&gt;
+    &lt;script src=&quot;https://unpkg.com/core-js/client/shim.min.js&quot;&gt;&lt;/script&gt;
+
+    &lt;!-- Update these package versions as needed --&gt;
+    &lt;script src=&quot;https://unpkg.com/zone.js@0.7.4?main=browser&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/systemjs@0.19.39/dist/system.src.js&quot;&gt;&lt;/script&gt;
+
+    &lt;!-- This SystemJS configuration loads umd packages from the web --&gt;
+    &lt;script src=&quot;systemjs.config.server.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+      System.import(&#39;main.js&#39;)
+            .catch(function(err){ console.error(err); });
+    &lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;my-app&gt;loading...&lt;/my-app&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+</code-pane><code-pane language="js" name="systemjs.config.server.js" format="linenums">/**
+ * System configuration for deployment without installing node_modules
+ * Loads umd packages from the web instead
+ * Adjust as necessary for your application needs.
+ */
+(function (global) {
+  System.config({
+    paths: {
+      &#39;npm:&#39;: &#39;https://unpkg.com/&#39; // path serves as alias
+    },
+    // map tells the System loader where to look for things
+    map: {
+      app: &#39;app&#39;, // location of transpiled app files
+
+      // angular minimized umd bundles
+      &#39;@angular/core&#39;: &#39;npm:@angular/core/bundles/core.umd.min.js&#39;,
+      &#39;@angular/common&#39;: &#39;npm:@angular/common/bundles/common.umd.min.js&#39;,
+      &#39;@angular/compiler&#39;: &#39;npm:@angular/compiler/bundles/compiler.umd.min.js&#39;,
+      &#39;@angular/platform-browser&#39;: &#39;npm:@angular/platform-browser/bundles/platform-browser.umd.min.js&#39;,
+      &#39;@angular/platform-browser-dynamic&#39;: &#39;npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js&#39;,
+      &#39;@angular/http&#39;: &#39;npm:@angular/http/bundles/http.umd.min.js&#39;,
+      &#39;@angular/router&#39;: &#39;npm:@angular/router/bundles/router.umd.min.js&#39;,
+      &#39;@angular/router/upgrade&#39;: &#39;npm:@angular/router/bundles/router-upgrade.umd.min.js&#39;,
+      &#39;@angular/forms&#39;: &#39;npm:@angular/forms/bundles/forms.umd.min.js&#39;,
+      &#39;@angular/upgrade&#39;: &#39;npm:@angular/upgrade/bundles/upgrade.umd.min.js&#39;,
+      &#39;@angular/upgrade/static&#39;: &#39;npm:@angular/upgrade/bundles/upgrade-static.umd.min.js&#39;,
+
+      // other libraries
+      &#39;rxjs&#39;:                      &#39;npm:rxjs@5.0.1&#39;,
+      &#39;angular-in-memory-web-api&#39;: &#39;npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js&#39;
+    },
+    // packages tells the System loader how to load when no filename and/or no extension
+    packages: {
+      app: {
+        main: &#39;./main.js&#39;,
+        defaultExtension: &#39;js&#39;
+      },
+      rxjs: {
+        defaultExtension: &#39;js&#39;
+      }
+    }
+  });
+  })(this);
+</code-pane><code-pane language="ts" name="main.ts" format="linenums">import { platformBrowserDynamic } from &#39;@angular/platform-browser-dynamic&#39;;
+
+import { AppModule } from &#39;./app/app.module&#39;;
+
+import { enableProdMode } from &#39;@angular/core&#39;;
+
+// Enable production mode unless running locally
+if (!/localhost/.test(document.location.host)) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+</code-pane><code-pane language="ts" name="app/app.module.ts" format="linenums">import { NgModule }             from &#39;@angular/core&#39;;
+import { BrowserModule }        from &#39;@angular/platform-browser&#39;;
+import { RouterModule, Routes } from &#39;@angular/router&#39;;
+
+import { AppComponent }           from &#39;./app.component&#39;;
+import { CrisisListComponent }    from &#39;./crisis-list.component&#39;;
+import { HeroListComponent }      from &#39;./hero-list.component&#39;;
+
+const appRoutes: Routes = [
+  { path: &#39;crisis-center&#39;, component: CrisisListComponent },
+  { path: &#39;heroes&#39;,        component: HeroListComponent },
+
+  { path: &#39;&#39;, redirectTo: &#39;/heroes&#39;, pathMatch: &#39;full&#39; }
+];
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  declarations: [
+    AppComponent,
+    CrisisListComponent,
+    HeroListComponent
+  ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+</code-pane><code-pane language="ts" name="app/app.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+@Component({
+  selector: &#39;my-app&#39;,
+  template: `
+    &lt;h1&gt;Simple Deployment&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a routerLink=&quot;/crisis-center&quot; routerLinkActive=&quot;active&quot;&gt;Crisis Center&lt;/a&gt;
+      &lt;a routerLink=&quot;/heroes&quot; routerLinkActive=&quot;active&quot;&gt;Heroes&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+  `
+})
+export class AppComponent { }
+</code-pane><code-pane language="ts" name="app/crisis-list.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+@Component({
+  template: `
+    &lt;h2&gt;CRISIS CENTER&lt;/h2&gt;
+    &lt;p&gt;Get your crisis here&lt;/p&gt;`
+})
+export class CrisisListComponent { }
+</code-pane><code-pane language="ts
+  " name="app/hero-list.component.ts" format="linenums">import { Component } from &#39;@angular/core&#39;;
+
+@Component({
+  template: `
+    &lt;h2&gt;HEROES&lt;/h2&gt;
+    &lt;p&gt;Get your heroes here&lt;/p&gt;
+  `
+})
+export class HeroListComponent { }
+</code-pane></code-tabs><p>Practice with this sample before attempting these techniques on your application.</p>
+<ol>
+<li><p>Follow the <a href="../guide/setup.html" title="Angular QuickStart setup">setup instructions</a> for creating a new project
+named <ngio-ex path="simple-deployment"></ngio-ex>.</p>
+</li>
+<li><p>Add the &quot;Simple deployment&quot; sample files shown above.</p>
+</li>
+<li><p>Run it with <code>npm start</code> as you would any project.</p>
+</li>
+<li><p>Inspect the network traffic in the browser developer tools. 
+Notice that it loads all packages from the web.
+You could delete the <code>node_modules</code> folder and the app would still run 
+(although you wouldn&#39;t be able to recompile or launch <code>lite-server</code>
+until you restored it).</p>
+</li>
+<li><p>Deploy the sample to the server (minus the <code>node_modules</code> folder!).</p>
+</li>
+</ol>
+<p>When you have that working, try the same process on your application.</p>
+<a id="optimize"></a><div class="l-main-section"></div><h2 id="optimize-for-production">Optimize for production</h2>
+<p>Although deploying directly from the development environment works, it&#39;s far from optimal.</p>
+<p>The client makes many small requests for individual application code and template files,
+a fact you can quickly confirm by looking at the network tab in a browser&#39;s developer tools.
+Each small file download can spend more time communicating with the server than tranfering data.</p>
+<p>Development files are full of comments and whitespace for easy reading and debugging.
+The browser downloads entire libraries, instead of just the parts the app needs.
+The volume of code passed from server to client (the &quot;payload&quot;) 
+can be significantly larger than is strictly necessary to execute the application.</p>
+<p>The many requests and large payloads mean
+the app takes longer to launch than it would if you optimized it.
+Several seconds may pass (or worse) before the user can see or do anything userful.</p>
+<p>Does it matter? That depends upon business and technical factors you must evaluate for yourself.</p>
+<p>If it <em>does</em> matter, there are tools and techniques to reduce the number of requests and the size of responses.</p>
+<ul>
+<li>Ahead-of-Time (AOT) Compilation: pre-compiles Angular component templates.</li>
+<li>Bundling: concatenates modules into a single file (bundle). </li>
+<li>Inlining: pulls template html and css into the components.</li>
+<li>Minification: removes excess whitespace, comments, and optional tokens.</li>
+<li>Uglification: rewrites code to use short, cryptic variable and function names.</li>
+<li>Dead code elimination: removes unreferenced modules and unused code.</li>
+<li>Pruned libraries: drop unused libraries and pare others down to the features you need.</li>
+<li>Performance measurement: focus on optimizations that make a measurable difference.</li>
+</ul>
+<p>Each tool does something different. 
+They work best in combination and are mutually reinforcing.</p>
+<p>You can use any build system you like.
+Whatever system you choose, be sure to automate it so that 
+building for production is a single step.</p>
+<a id="aot"></a><h3 id="ahead-of-time-aot-compilation">Ahead-of-Time (AOT) compilation</h3>
+<p>The Angular <em>Ahead-of-Time</em> compiler pre-compiles application components and their templates
+during the build process.</p>
+<p>Apps compiled with AOT launch faster for several reasons.</p>
+<ul>
+<li>Application components execute immediately, without client-side compilation.</li>
+<li>Templates are embedded as code within their components so there is no client-side request for template files.</li>
+<li>You don&#39;t download the Angular compiler, which is pretty big on its own.</li>
+<li>The compiler discards unused Angular directives that a tree-shaking tool can then exclude.</li>
+</ul>
+<p>Learn more about AOT Compilation in the <a href="../cookbook/aot-compiler.html" title="AOT Cookbook">AOT Cookbook</a>
+which describes running the AOT compiler from the command line
+and using <a href="#rollup"><em>rollup</em></a> for bundling, minification, uglification and tree shaking.</p>
+<a id="webpack"></a><h3 id="webpack-and-aot-">Webpack (and AOT)</h3>
+<p><a href="https://webpack.js.org/" target="_blank" title="Webpack 2">Webpack 2</a> is another
+great option for inlining templates and style-sheets, for bundling, minifying, and uglifying the application.
+The &quot;<a href="webpack.html" title="Webpack: an introduction">Webpack: an introduction</a>&quot; guide will get you started 
+using webpack with Angular.</p>
+<p>Consider configuring <em>Webpack</em> with the official
+<a href="https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack" target="_blank" title="Ahead-of-Time Webpack Plugin">
+Angular Ahead-of-Time Webpack Plugin</a>.
+This plugin transpiles the TypeScript application code, 
+bundles lazy loaded <code>NgModules</code> separately,
+and performs AOT compilation &mdash; without any changes to the source code.</p>
+<a id="rollup"></a><h3 id="dead-code-elimination-with-_rollup_">Dead code elimination with <em>rollup</em></h3>
+<p>Any code that you don&#39;t call is <em>dead code</em>.
+You can reduce the total size of the application substantially by removing dead code from the application and from third-party libraries.</p>
+<p><em>Tree shaking</em> is a <em>dead code elimination</em> technique that removes entire exports from JavaScript modules.
+If a library exports something that the application doesn&#39;t import, a tree shaking tool removes it from the code base.</p>
+<p>Tree shaking was popularized by
+<a href="http://rollupjs.org/" target="_blank" title="Rollup">Rollup</a>, a popular tool with an ecosystem of 
+plugins for bundling, minification, and uglification.
+Learn more about tree shaking and dead code elmination in
+<a href="https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80#.15ih9cyvl" target="_blank" title="Tree-shaking and Dead Code Elimination">
+this post</a> by rollup-creator, Rich Harris.</p>
+<a id="prune"></a><h3 id="pruned-libraries">Pruned libraries</h3>
+<p>Don&#39;t count on automation to remove all dead code.</p>
+<p>Remove libraries that you don&#39;t use, especially unnecessary scripts in <code>index.html</code>.
+Consider smaller alternatives to the libraries that you do use.</p>
+<p>Some libraries offer facilities for building a custom, skinny version with just the features you need.
+Other libraries let you import features <em>a la carte</em>.
+<strong>RxJS</strong> is a good example; import RxJS <code>Observable</code> operators individually instead of the entire library.</p>
+<a id="measure"></a><h3 id="measure-performance-first">Measure performance first</h3>
+<p>You can make better decisions about what to optimize and how when you have a clear and accurate understanding of
+what&#39;s making the application slow.
+The cause may not be what you think it is. 
+You can waste a lot of time and money optimizing something that has no tangible benefit or even makes the app slower.
+You should measure the app&#39;s actual behavior when running in the environments that are important to you.</p>
+<p>The 
+<a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing" target="_blank" title="Chrome DevTools Network Performance">
+Chrome DevTools Network Performance page</a> is a good place to start learning about measuring performance. </p>
+<p>The <a href="https://www.webpagetest.org/">WebPageTest</a> tool is another good choice 
+that can also help verify that your deployment was successful.</p>
+<a id="angular-configuration"></a><div class="l-main-section"></div><h2 id="angular-configuration">Angular configuration</h2>
+<p>Angular configuration can make the difference between whether the app launches quickly or doesn&#39;t load at all.</p>
+<a id="base-tag"></a><h3 id="the-base-tag">The <code>base</code> tag</h3>
+<p>The HTML <a href="https://angular.io/docs/ts/latest/guide/router.html#!#base-href"><em>&lt;base href=&quot;...&quot;/&gt;</em></a>
+specifies a base path for resolving relative URLs to assets such as images, scripts, and style sheets.
+For example, given the <code>&lt;base href=&quot;/my/app/&quot;&gt;</code>, the browser resolves a URL such as <code>some/place/foo.jpg</code> 
+into a server request for <code>my/app/some/place/foo.jpg</code>.
+During navigation, the Angular router uses the <em>base href</em> as the base path to component, template, and module files.</p>
+<div class="l-sub-section"><p>See also the <a href="../api/common/index/APP_BASE_HREF-let.html" title="API: APP_BASE_HREF"><em>APP_BASE_HREF</em></a> alternative.</p>
+</div><p>In development, you typically start the server in the folder that holds <code>index.html</code>. 
+That&#39;s the root folder and you&#39;d add <code>&lt;base href=&quot;/&quot;&gt;</code> near the top of <code>index.html</code> because <code>/</code> is the root of the app.</p>
+<p>But on the shared or production server, you might serve the app from a subfolder.
+For example, when the URL to load the app is something like <code>http://www.mysite.com/my/app/</code>, 
+the subfolder is <code>my/app/</code> and you should add <code>&lt;base href=&quot;/my/app/&quot;&gt;</code> to the server version of the <code>index.html</code>.</p>
+<p>When the <code>base</code> tag is misconfigured, the app fails to load and the browser console displays <code>404 - Not Found</code> errors
+for the missing files. Look at where it <em>tried</em> to find those files and adjust the base tag appropriately.</p>
+<a id="enable-prod-mode"></a><h3 id="enable-production-mode">Enable production mode</h3>
+<p>Angular apps run in development mode by default, as you can see by the following message on the browser
+console:</p>
+<code-example format="nocode">Angular 2 is running in the development mode. Call enableProdMode() to enable the production mode.</code-example><p>Switching to production mode can make it run faster by disabling development specific checks such as the dual change detection cycles.</p>
+<p>To enable <a href="../api/core/index/enableProdMode-function.html">production mode</a> when running remotely, add the following code to the <code>main.ts</code>. </p>
+<div class="code-example"><header><h4>src/main.ts (enableProdMode)</h4></header><code-example language="ts" format="">import { enableProdMode } from &#39;@angular/core&#39;;
+
+// Enable production mode unless running locally
+if (!/localhost/.test(document.location.host)) {
+  enableProdMode();
+}
+</code-example></div><a id="lazy-loading"></a><h3 id="lazy-loading">Lazy loading</h3>
+<p>You can dramatically reduce launch time by only loading the application modules that
+absolutely must be present when the app starts.</p>
+<p>Configure the Angular Router to defer loading of all other modules (and their associated code), either by 
+<a href="router.html#preloading" title="Preloading">waiting until the app has launched</a>
+or by <a href="router.html#asynchronous-routing" title="Lazy loading"><em>lazy loading</em></a>
+them on demand.</p>
+<h4 id="don-t-eagerly-import-something-from-a-lazy-loaded-module">Don&#39;t eagerly import something from a lazy loaded module</h4>
+<p>It&#39;s a common mistake.
+You&#39;ve arranged to lazy load a module.
+But you unintentionally import it, with a JavaScript <code>import</code> statement,
+in a file that&#39;s eagerly loaded when the app starts, a file such as the root <code>AppModule</code>.
+If you do that, the module will be loaded immediately. </p>
+<p>The bundling configuration must take lazy loading into consideration.
+Because lazy loaded modules aren&#39;t imported in JavaScript (as just noted), bundlers exclude them by default. 
+Bundlers don&#39;t know about the router configuration and won&#39;t create separate bundles for lazy loaded modules.
+You have to create these bundles manually.</p>
+<p>The 
+<a href="https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack">Angular Ahead-of-Time Webpack Plugin</a>
+automatically recognizes lazy loaded <code>NgModules</code> and creates separate bundles for them.</p>
+<a id="server-configuration"></a><div class="l-main-section"></div><h2 id="server-configuration">Server configuration</h2>
+<p>This section covers changes you may have make to the server or to files deployed to the server.</p>
+<a id="fallback"></a><h3 id="routed-apps-must-fallback-to-index-html-">Routed apps must fallback to <code>index.html</code></h3>
+<p>Angular apps are perfect candidates for serving with a simple static HTML server.
+You don&#39;t need a server-side engine to dynamically compose application pages because
+Angular does that on the client-side.</p>
+<p>If the app uses the Angular router, you must configure the server 
+to return the application&#39;s host page (<code>index.html</code>) when asked for a file that it does not have.</p>
+<a id="deep-link"></a><p>A routed application should support &quot;deep links&quot;.
+A <em>deep link</em> is a URL that specifies a path to a component inside the app.
+For example, <code>http://www.mysite.com/heroes/42</code> is a <em>deep link</em> to the hero detail page
+that displays the hero with <code>id: 42</code>.</p>
+<p>There is no issue when the user navigates to that URL from within a running client.
+The Angular router interprets the URL and routes to that page and hero.</p>
+<p>But clicking a link in an email, entering it in the browser address bar, 
+or merely refreshing the browser while on the hero detail page &mdash;
+all of these actions are handled by the browser itself, <em>outside</em> the running application.
+The browser makes a direct request to the server for that URL, bypassing the router.</p>
+<p>A static server routinely returns <code>index.html</code> when it receives a request for <code>http://www.mysite.com/</code>.
+But it rejects <code>http://www.mysite.com/heroes/42</code> and returns a <code>404 - Not Found</code> error <em>unless</em> it is 
+configured to return <code>index.html</code> instead.</p>
+<h4 id="fallback-configuration-examples">Fallback configuration examples</h4>
+<p>There is no single configuration that works for every server.
+The following sections describe configurations for some of the most popular servers. 
+The list is by no means exhaustive, but should provide you with a good starting point.</p>
+<h4 id="development-servers">Development servers</h4>
+<ul>
+<li><p><a href="https://github.com/johnpapa/lite-server">Lite-Server</a>: the default dev server installed with the
+<a href="https://github.com/angular/quickstart">Quickstart repo</a> is pre-configured to fallback to <code>index.html</code>.</p>
+</li>
+<li><p><a href="https://github.com/webpack/webpack-dev-server">Webpack-Dev-Server</a>:  setup the 
+<code>historyApiFallback</code> entry in the dev server options as follows:</p>
+</li>
+</ul>
+<code-example>historyApiFallback: {
+  disableDotRule: true,
+  htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']
+}
+</code-example><h4 id="production-servers">Production servers</h4>
+<ul>
+<li><a href="https://httpd.apache.org/">Apache</a>: add a 
+<a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">rewrite rule</a>
+to the <code>.htaccess</code> file as show 
+<a href="https://ngmilk.rocks/2015/03/09/angularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/">here</a>:</li>
+</ul>
+<code-example format=".">RewriteEngine On  
+# If an existing asset or directory is requested go to it as it is
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# If the requested resource doesn't exist, use index.html
+RewriteRule ^ /index.html
+</code-example><ul>
+<li><a href="http://nginx.org/">NGinx</a>: use <code>try_files</code>, as described in 
+<a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/#front-controller-pattern-web-apps">Front Controller Pattern Web Apps</a>,
+modified to serve <code>index.html</code>:</li>
+</ul>
+<code-example format=".">try_files $uri $uri/ /index.html;
+</code-example><ul>
+<li><a href="https://www.iis.net/">IIS</a>: add a rewrite rule to <code>web.config</code>, similar to the one shown
+<a href="http://stackoverflow.com/a/26152011/2116927">here</a>:</li>
+</ul>
+<code-example format="." escape="html"><system .webserver>
+  <rewrite>
+    <rules>
+      <rule name="Angular Routes" stopprocessing="true">
+        <match url=".*">
+        <conditions logicalgrouping="MatchAll">
+          <add input="{REQUEST_FILENAME}" matchtype="IsFile" negate="true">
+          <add input="{REQUEST_FILENAME}" matchtype="IsDirectory" negate="true">
+        </conditions>
+        <action type="Rewrite" url="/">
+      </rule>
+    </rules>
+  </rewrite>
+</system>
+</code-example><ul>
+<li><p><a href="https://pages.github.com/">GitHub Pages</a>: you can&#39;t 
+<a href="https://github.com/isaacs/github/issues/408">directly configure</a> 
+the GitHub Pages server, but you can add a 404 page. 
+Copy <code>index.html</code> into <code>404.html</code>.
+It will still be served as the 404 response, but the browser will process that page and load the app properly.
+It&#39;s also a good idea to 
+<a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch">serve from <code>docs/</code> on master</a> 
+and to 
+<a href="https://www.bennadel.com/blog/3181-including-node-modules-and-vendors-folders-in-your-github-pages-site.htm">create a <code>.nojekyll</code> file</a></p>
+</li>
+<li><p><a href="https://firebase.google.com/docs/hosting/">Firebase hosting</a>: add a
+<a href="https://firebase.google.com/docs/hosting/url-redirects-rewrites#section-rewrites">rewrite rule</a>.</p>
+</li>
+</ul>
+<code-example format=".">"rewrites": [ {
+  "source": "**",
+  "destination": "/index.html"
+} ]
+</code-example><a id="cors"></a><div class="l-main-section"></div><h3 id="requesting-services-from-a-different-server-cors-">Requesting services from a different server (CORS)</h3>
+<p>Angular developers may encounter a
+<a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" title="Cross-origin resource sharing">
+<i>cross-origin resource sharing</i></a> error when making a service request (typically a data service request).
+to a server other than the application&#39;s own host server.
+Browsers forbid such requests unless the server permits them explicitly.</p>
+<p>There isn&#39;t anything the client application can do about these errors.
+The server must be configured to accept the application&#39;s requests. 
+Read about how to enable CORS for specific servers at
+<a href="http://enable-cors.org/server.html" target="_blank" title="Enabling CORS server">enable-cors.org</a>.</p>
+<a id="next-steps"></a><div class="l-main-section"></div><h2 id="next-steps">Next steps</h2>
+<p> If you want to go beyond the <a href="#dev-deploy" title="Simplest deployment possible">simple <em>copy-deploy</em></a> approach,
+ read the <a href="../cookbook/aot-compiler.html" title="AOT Cookbook">AOT Cookbook</a> next.</p><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div data-swiftype-index="false" class="main-footer"><nav class="background-midnight grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">RESOURCES</h3><ul class="text-body"><!-- TODO: (ericjim) make a libraries page to showcase all angular libraries--><!--li <a href="/libraries.html">Libraries</a>--><li><a href="/about/">About</a></li><li><a href="/resources/#Education">Books & Training</a></li><li><a href="/resources/">Tools & Libraries</a></li><li><a href="/resources/">Community</a></li><li><a href="/presskit.html">Press Kit</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="http://stackoverflow.com/questions/tagged/angular2">Stack Overflow</a></li><li><a href="https://gitter.im/angular/angular">Gitter</a></li><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://github.com/angular/angular/issues"> Report Issues</a></li><li><a class="footer-feedback" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"> Site Feedback</a></li></ul></div><div class="c2"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="/events.html">Events</a></li><li><a href="http://www.meetup.com/topics/angularjs/">Meetups</a></li><li><a href="https://twitter.com/angular"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li><li><a href="/contribute.html"> Contribute</a></li></ul></div><div class="c2"><h3 class="text-headline">LANGUAGES</h3><ul class="text-body"><li><a href="https://angular.cn/">中文版</a></li></ul></div></nav><footer class="background-midnight"><small class="text-caption">Powered by Google ©2010-2017. Code licensed under an <a href="/license">MIT-style License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</small><a aria-label="View Style Guide" href="/docs/ts/latest/styleguide.html" title="Style Guide" class="styleguide-trigger"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><script src="/resources/js/vendor/clipboard.min.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script><!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/util.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/controllers/resources-controller.js"></script><script src="/resources/js/directives/cheatsheet.js"></script><script src="/resources/js/directives/api-list.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/bold.js"></script><script src="/resources/js/directives/announcement-bar.js"></script><script src="/resources/js/directives/code.js"></script><script src="/resources/js/directives/copy.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><script src="/resources/js/directives/if-docs.js"></script><script src="/resources/js/directives/live-example.js"></script><script src="/resources/js/directives/ngio-ex-path.js"></script><script src="/resources/js/directives/scroll-y-offset-element.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-8594346-15', 'auto');
+ga('send', 'pageview')
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK','2.0.0');
+
+</script><!-- Google Feedback --><script src="//www.gstatic.com/feedback/api.js" type="text/javascript"></script><!-- Twitter Widget --><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}})(document,"script","twitter-wjs");</script></body></html>

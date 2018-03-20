@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><!-- template: public/docs/_layout--><head><title>Hierarchical Dependency Injectors - ts - GUIDE</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl as appCtrl" class="l-offset-nav l-offset-side-nav"><nav data-swiftype-index="false" scroll-y-offset-element="scroll-y-offset-element" class="main-nav l-pinned-top l-layer-5"><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="appCtrl.toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="appCtrl.showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/events.html" md-button>Events</a></li><li class="l-right"><a class="main-nav-button" href="/docs/ts/latest/quickstart.html" md-button>Get Started</a></li></ul></nav><!-- Include this file ONLY when current.path[2] is defined--><nav data-swiftype-index="false" ng-class="appCtrl.showDocsNav ? 'is-visible' : ''" class="sidenav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="sidenav-search st-input-wrapper"><div class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="text" placeholder="SEARCH DOCS..." class="st-default-search-input"/></div><button aria-label="View Docs Menu" ng-click="appCtrl.toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><ul class="sidenav-links"><li class="sidenav-section no-border"><a href="/docs/ts/latest/" class="nav-title">Docs Home</a></li><!-- CORE DOCUMENTATION--><li class="sidenav-section-divider"><h3>Core Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/quickstart.html" title="Quickstart" class="nav-title ">Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/cli-quickstart.html" title="CLI Quickstart" class="nav-title ">CLI Quickstart</a></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/" title="How to read and use this documentation." class="nav-title is-parent ">Guide<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/" title="How to read and use this documentation.">1. Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/setup.html" title="Install the Angular QuickStart seed for faster, more efficient development on your machine.">2. Setup</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/learning-angular.html" title="A suggested path through the documentation for Angular newcomers.">3. Learning Angular</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/architecture.html" title="The basic building blocks of Angular applications.">4. Architecture</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/appmodule.html" title="Tell Angular how to construct and bootstrap the app in the root &quot;AppModule&quot;.">5. The Root Module</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/displaying-data.html" title="Property binding helps show app data in the UI.">6. Displaying Data</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/user-input.html" title="User input triggers DOM events. We listen to those events with event bindings that funnel updated values back into our components and models.">7. User Input</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/forms.html" title="A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors.">8. Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/dependency-injection.html" title="Angular's dependency injection system creates and delivers dependent services &quot;just-in-time&quot;.">9. Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/template-syntax.html" title="Learn how to write templates that display data and consume user events with the help of data binding.">10. Template Syntax</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/cheatsheet.html" title="Cheat Sheet">11. Cheat Sheet</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/style-guide.html" title="Write Angular with style.">12. Style Guide</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/glossary.html" title="Brief definitions of the most important words in the Angular vocabulary.">13. Glossary</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/change-log.html" title="An annotated history of recent documentation improvements.">14. Change Log</a></li></ul></div></li><li class="sidenav-section no-border"><a href="/docs/ts/latest/api/" title="API Reference" class="nav-title ">API Reference</a></li><!-- ADVANCED DOCUMENATION--><li class="sidenav-section-divider"><h3>Additional Documentation</h3></li><li class="sidenav-section"><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript." class="nav-title is-parent ">Tutorial<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-ordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/" title="The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript.">1. Introduction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt1.html" title="We build a simple hero editor.">2. The Hero Editor</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt2.html" title="We build a master/detail page with a list of heroes.">3. Master/Detail</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt3.html" title="We refactor the master/detail view into separate components.">4. Multiple Components</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt4.html" title="We create a reusable service to manage our hero data calls.">5. Services</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt5.html" title="We add the Angular Router and learn to navigate among the views.">6. Routing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/tutorial/toh-pt6.html" title="We convert our service and components to use Angular's HTTP service.">7. HTTP</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system." class="nav-title is-parent is-selected">Advanced<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists"><ul><li class="nav-list-item "><a href="/docs/ts/latest/guide/animations.html" title="A guide to Angular's animation system.">Animations</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/attribute-directives.html" title="Attribute directives attach behavior to elements.">Attribute Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/browser-support.html" title="Browser support and polyfills guide.">Browser support</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/component-styles.html" title="Learn how to apply CSS styles to components.">Component Styles</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/deployment.html" title="Learn how to deploy your Angular app.">Deployment</a></li><li class="nav-list-item is-selected"><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" title="Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.">Hierarchical Injectors</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/reactive-forms.html" title="Create a reactive form using FormBuilder, groups, and arrays.">Reactive Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/server-communication.html" title="Use an HTTP Client to talk to a remote server.">HTTP Client</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/lifecycle-hooks.html" title="Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them.">Lifecycle Hooks</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/ngmodule.html" title="Define application modules with @NgModule.">NgModules</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/npm-packages.html" title="Recommended npm packages, and how to specify package dependencies.">Npm Packages</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/pipes.html" title="Pipes transform displayed values within a template.">Pipes</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/router.html" title="Discover the basics of screen navigation with the Angular Router.">Routing &amp; Navigation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/security.html" title="Developing for content security in Angular applications.">Security</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/setup-systemjs-anatomy.html" title="Inside the local development environment for SystemJS.">Setup Anatomy</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/structural-directives.html" title="Angular has a powerful template engine that lets us easily manipulate the DOM structure of our elements.">Structural Directives</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/testing.html" title="Techniques and practices for testing an Angular app.">Testing</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/typescript-configuration.html" title="TypeScript configuration for Angular developers.">TypeScript Configuration</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/upgrade.html" title="Incrementally upgrade an AngularJS application to Angular.">Upgrading from AngularJS</a></li><li class="nav-list-item "><a href="/docs/ts/latest/guide/webpack.html" title="Create Angular applications with a Webpack based tooling.">Webpack: an introduction</a></li></ul></div></li><li class="sidenav-section"><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios." class="nav-title is-parent ">Cookbook<img src="/resources/images/icons/ic_keyboard_arrow_down_black_24px.svg" class="inline-arrow-down-svg"/></a><div class="nav-unordered-lists is-hidden"><ul><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/" title="A collection of recipes for common Angular application scenarios.">Overview</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/aot-compiler.html" title="Learn how to use Ahead-of-time compilation.">Ahead-of-Time Compilation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ajs-quick-reference.html" title="Learn how AngularJS concepts and techniques map to Angular.">AngularJS to Angular</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/component-communication.html" title="Share information between different directives and components.">Component Interaction</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dependency-injection.html" title="Techniques for Dependency Injection.">Dependency Injection</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-component-loader.html" title="Load components dynamically.">Dynamic Component Loader</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/dynamic-form.html" title="Render dynamic forms with FormGroup.">Dynamic Forms</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/form-validation.html" title="Validate user's form entries.">Form Validation</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/i18n.html" title="Translate the app's template text into multiple languages.">Internationalization (i18n)</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ngmodule-faq.html" title="Answers to frequently asked questions about @NgModule.">NgModule FAQs</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/set-document-title.html" title="Setting the document or window title using the Title service.">Set the Document Title</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/ts-to-js.html" title="Convert Angular TypeScript examples into ES6 and ES5 JavaScript.">TypeScript to JavaScript</a></li><li class="nav-list-item "><a href="/docs/ts/latest/cookbook/visual-studio-2015.html" title="Use Visual Studio 2015 with the QuickStart files.">Visual Studio 2015 QuickStart</a></li></ul></div></li></ul><nav class="dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="appCtrl.toggleVersionMenu($event)" class="dropdown-button">Angular for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="appCtrl.toggleVersionMenu($event)" ng-show="appCtrl.showMenu" class="overlay ng-hide"></div><ul ng-class="appCtrl.showMenu ? 'is-visible' : ''" class="dropdown-menu"><li><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" md-button>Angular for TypeScript </a></li><li><a href="/docs/js/latest/guide/hierarchical-dependency-injection.html" md-button>Angular for JavaScript </a></li></ul></nav></nav><script>// Could put in appCtrl but only needed here and clear here
+(function scrollToSelectedLink() {
+  var sideNav = document.getElementsByClassName('sidenav')[0];
+  var link = sideNav.getElementsByClassName('is-selected')[0];
+  if(link && link.offsetTop > window.innerHeight){
+    sideNav.scrollTop = link.offsetTop - (window.innerHeight/2);
+    //alert("offsetTop: " + link.offsetTop + " side-nav top is " + sideNav.scrollTop);
+  }
+})()</script><header class="hero background-sky"><h1 class="hero-title ">Hierarchical Dependency Injectors </h1><div class="clear"></div></header><div class="banner"><p class="text-body">Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.</p></div><article class="l-content-small grid-fluid docs-content"><script>function why(id, backTo) {
+  var id = "#"+id;
+  var el = document.querySelector(id);
+  el.hidden=el.hidden=!el.hidden;
+
+  if (el.hidden && backTo){
+    // the next line is required to work around a bug in WebKit (Chrome / Safari)
+    location.href = "#";
+    location.href =  "#" + backTo;
+  }
+}</script><script>function verbose(isVerbose) {
+  isVerbose = !! isVerbose;
+  var el = document.querySelector('button.verbose.off');
+  el.style.display = isVerbose ? 'block' : 'none';
+  var el = document.querySelector('button.verbose.on');
+  el.style.display = isVerbose ? 'none' : 'block';
+
+  CCSStylesheetRuleStyle('main','.l-verbose-section', 'display',
+    isVerbose ? 'block' : 'none');
+}
+</script><script>function CCSStylesheetRuleStyle(stylesheet, selectorText, style, value){
+  /* returns the value of the element style of the rule in the stylesheet
+  *  If no value is given, reads the value
+  *  If value is given, the value is changed and returned
+  *  If '' (empty string) is given, erases the value.
+  *  The browser will apply the default one
+  *
+  * string stylesheet: part of the .css name to be recognized, e.g. 'default'
+  * string selectorText: css selector, e.g. '#myId', '.myClass', 'thead td'
+  * string style: camelCase element style, e.g. 'fontSize'
+  * string value optional : the new value
+  */
+  var CCSstyle = undefined, rules, sheet;
+  for(var m in document.styleSheets){
+    sheet = document.styleSheets[m];
+    if(sheet.href && sheet.href.indexOf(stylesheet) != -1){
+    rules = sheet[document.all ? 'rules' : 'cssRules'];
+    for(var n in rules){
+      console.log(rules[n].selectorText);
+      if(rules[n].selectorText == selectorText){
+        CCSstyle = rules[n].style;
+        break;
+      }
+    }
+    break;
+    }
+  }
+  if(value == undefined)
+    return CCSstyle[style]
+  else
+    return CCSstyle[style] = value
+}
+</script><p>You learned the basics of Angular Dependency injection in the
+<a href="./dependency-injection.html">Dependency Injection</a> guide.</p>
+<p>Angular has a <em>Hierarchical Dependency Injection</em> system.
+There is actually a tree of injectors that parallel an application&#39;s component tree.
+You can reconfigure the injectors at any level of that component tree.</p>
+<p>This guide explores this system and how to use it to your advantage.</p>
+<p>Try the <live-example></live-example>.</p>
+<div class="l-main-section"></div><h2 id="the-injector-tree">The injector tree</h2>
+<p>In the <a href="./dependency-injection.html">Dependency Injection</a> guide,
+you learned how to configure a dependency injector and how to retrieve dependencies where you need them.</p>
+<p>In fact, there is no such thing as <strong><em>the</em></strong> injector.
+An application may have multiple injectors.
+An Angular application is a tree of components. Each component instance has its own injector.
+The tree of components parallels the tree of injectors.</p>
+<div class="l-sub-section"><p>The component&#39;s injector may be a <em>proxy</em> for an ancestor injector higher in the component tree.
+That&#39;s an implementation detail that improves efficiency.
+You won&#39;t notice the difference and
+your mental model should be that every component has its own injector.</p>
+</div><p>Consider this guide&#39;s variation on the Tour of Heroes application.
+At the top is the <code>AppComponent</code> which has some sub-components.
+One of them is the <code>HeroesListComponent</code>.
+The <code>HeroesListComponent</code> holds and manages multiple instances of the <code>HeroTaxReturnComponent</code>.
+The following diagram represents the state of the this guide&#39;s three-level component tree when there are three instances of <code>HeroTaxReturnComponent</code>
+open simultaneously.</p>
+<figure class="image-display"><img src="/resources/images/devguide/dependency-injection/component-hierarchy.png" alt="injector tree" width="600"></figure><h3 id="injector-bubbling">Injector bubbling</h3>
+<p>When a component requests a dependency, Angular tries to satisfy that dependency with a provider registered in that component&#39;s own injector.
+If the component&#39;s injector lacks the provider, it passes the request up to its parent component&#39;s injector.
+If that injector can&#39;t satisfy the request, it passes it along to <em>its</em> parent injector.
+The requests keep bubbling up until Angular finds an injector that can handle the request or runs out of ancestor injectors.
+If it runs out of ancestors, Angular throws an error.</p>
+<div class="l-sub-section"><p>You can cap the bubbling. An intermediate component can declare that it is the &quot;host&quot; component.
+The hunt for providers will climb no higher than the injector for that host component.
+This is a topic for another day.</p>
+</div><h3 id="re-providing-a-service-at-different-levels">Re-providing a service at different levels</h3>
+<p>You can re-register a provider for a particular dependency token at multiple levels of the injector tree.
+You don&#39;t <em>have</em> to re-register providers. You shouldn&#39;t do so unless you have a good reason.
+But you <em>can</em>.</p>
+<p>As the resolution logic works upwards, the first provider encountered wins.
+Thus, a provider in an intermediate injector intercepts a request for a service from something lower in the tree.
+It effectively &quot;reconfigures&quot; and &quot;shadows&quot; a provider at a higher level in the tree.</p>
+<p>If you only specify providers at the top level (typically the root <code>AppModule</code>), the tree of injectors appears to be flat.
+All requests bubble up to the root <span if-docs="ts"><code>NgModule</code></span> injector that you configured with the <code>bootstrapModule</code> method.</p>
+<div class="l-main-section"></div><h2 id="component-injectors">Component injectors</h2>
+<p>The ability to configure one or more providers at different levels opens up interesting and useful possibilities.</p>
+<h3 id="scenario-service-isolation">Scenario: service isolation</h3>
+<p>Architectural reasons may lead you to restrict access to a service to the application domain where it belongs.</p>
+<p>The guide sample includes a <code>VillainsListComponent</code> that displays a list of villains.
+It gets those villains from a <code>VillainsService</code>.</p>
+<p>While you <em>could</em> provide <code>VillainsService</code> in the root <code>AppModule</code> (that&#39;s where you&#39;ll find the <code>HeroesService</code>),
+that would make the <code>VillainsService</code> available everywhere in the application, including the <em>Hero</em> workflows.</p>
+<p>If you later modified the <code>VillainsService</code>, you could break something in a hero component somewhere.
+That&#39;s not supposed to happen but providing the service in the root <code>AppModule</code> creates that risk.</p>
+<p>Instead, provide the <code>VillainsService</code> in the <code>providers</code> metadata of the <code>VillainsListComponent</code> like this:</p>
+<div class="code-example"><header><h4>src/app/villains-list.component.ts (metadata)</h4></header><code-example language="ts" format="">@Component({
+  selector: &#39;villains-list&#39;,
+  templateUrl: &#39;./villains-list.component.html&#39;,
+  providers: [ VillainsService ]
+})
+</code-example></div><p>By providing <code>VillainsService</code> in the <code>VillainsListComponent</code> metadata and nowhere else,
+the service becomes available only in the <code>VillainsListComponent</code> and its sub-component tree.
+It&#39;s still a singleton, but it&#39;s a singleton that exist solely in the <em>villain</em> domain.</p>
+<p>Now you know that a hero component can&#39;t access it. You&#39;ve reduced your exposure to error.</p>
+<h3 id="scenario-multiple-edit-sessions">Scenario: multiple edit sessions</h3>
+<p>Many applications allow users to work on several open tasks at the same time.
+For example, in a tax preparation application, the preparer could be working on several tax returns,
+switching from one to the other throughout the day.</p>
+<p>This guide demonstrates that scenario with an example in the Tour of Heroes theme.
+Imagine an outer <code>HeroListComponent</code> that displays a list of super heroes.</p>
+<p>To open a hero&#39;s tax return, the preparer clicks on a hero name, which opens a component for editing that return.
+Each selected hero tax return opens in its own component and multiple returns can be open at the same time.</p>
+<p>Each tax return component has the following characteristics:</p>
+<ul>
+<li>Is its own tax return editing session.</li>
+<li>Can change a tax return without affecting a return in another component.</li>
+<li>Has the ability to save the changes to its tax return or cancel them.</li>
+</ul>
+<figure class="image-display"><img src="/resources/images/devguide/dependency-injection/hid-heroes-anim.gif" width="400" alt="Heroes in action"></figure><p>One might suppose that the <code>HeroTaxReturnComponent</code> has logic to manage and restore changes.
+That would be a pretty easy task for a simple hero tax return.
+In the real world, with a rich tax return data model, the change management would be tricky.
+You might delegate that management to a helper service, as this example does.</p>
+<p>Here is the <code>HeroTaxReturnService</code>.
+It caches a single <code>HeroTaxReturn</code>, tracks changes to that return, and can save or restore it.
+It also delegates to the application-wide singleton <code>HeroService</code>, which it gets by injection.</p>
+<div class="code-example"><header><h4>src/app/hero-tax-return.service.ts</h4></header><code-example language="ts" format="linenums">import { Injectable }    from &#39;@angular/core&#39;;
+import { HeroTaxReturn } from &#39;./hero&#39;;
+import { HeroesService } from &#39;./heroes.service&#39;;
+
+@Injectable()
+export class HeroTaxReturnService {
+  private currentTaxReturn: HeroTaxReturn;
+  private originalTaxReturn: HeroTaxReturn;
+
+  constructor(private heroService: HeroesService) { }
+
+  set taxReturn (htr: HeroTaxReturn) {
+    this.originalTaxReturn = htr;
+    this.currentTaxReturn  = htr.clone();
+  }
+
+  get taxReturn (): HeroTaxReturn {
+    return this.currentTaxReturn;
+  }
+
+  restoreTaxReturn() {
+    this.taxReturn = this.originalTaxReturn;
+  }
+
+  saveTaxReturn() {
+    this.taxReturn = this.currentTaxReturn;
+    this.heroService.saveTaxReturn(this.currentTaxReturn).subscribe();
+  }
+}
+</code-example></div><p>Here is the <code>HeroTaxReturnComponent</code> that makes use of it.</p>
+<div class="code-example"><header><h4>src/app/hero-tax-return.component.ts</h4></header><code-example language="ts" format="linenums">import { Component, EventEmitter, Input, Output } from &#39;@angular/core&#39;;
+import { HeroTaxReturn }        from &#39;./hero&#39;;
+import { HeroTaxReturnService } from &#39;./hero-tax-return.service&#39;;
+
+@Component({
+  selector: &#39;hero-tax-return&#39;,
+  templateUrl: &#39;./hero-tax-return.component.html&#39;,
+  styleUrls: [ &#39;./hero-tax-return.component.css&#39; ],
+  providers: [ HeroTaxReturnService ]
+})
+export class HeroTaxReturnComponent {
+  message = &#39;&#39;;
+  @Output() close = new EventEmitter&lt;void&gt;();
+
+  get taxReturn(): HeroTaxReturn {
+    return this.heroTaxReturnService.taxReturn;
+  }
+  @Input()
+  set taxReturn (htr: HeroTaxReturn) {
+    this.heroTaxReturnService.taxReturn = htr;
+  }
+
+  constructor(private heroTaxReturnService: HeroTaxReturnService ) { }
+
+  onCanceled()  {
+    this.flashMessage(&#39;Canceled&#39;);
+    this.heroTaxReturnService.restoreTaxReturn();
+  };
+
+  onClose()  { this.close.emit(); };
+
+  onSaved() {
+    this.flashMessage(&#39;Saved&#39;);
+    this.heroTaxReturnService.saveTaxReturn();
+  }
+
+  flashMessage(msg: string) {
+    this.message = msg;
+    setTimeout(() =&gt; this.message = &#39;&#39;, 500);
+  }
+}
+</code-example></div><p>The <em>tax-return-to-edit</em> arrives via the input property which is implemented with getters and setters.
+The setter initializes the component&#39;s own instance of the <code>HeroTaxReturnService</code> with the incoming return.
+The getter always returns what that service says is the current state of the hero.
+The component also asks the service to save and restore this tax return.</p>
+<p>There&#39;d be big trouble if <em>this</em> service were an application-wide singleton.
+Every component would share the same service instance.
+Each component would overwrite the tax return that belonged to another hero.
+What a mess!</p>
+<p>Look closely at the metadata for the <code>HeroTaxReturnComponent</code>. Notice the <code>providers</code> property.</p>
+<div class="code-example"><code-example language="ts" format="">providers: [ HeroTaxReturnService ]
+</code-example></div><p>The <code>HeroTaxReturnComponent</code> has its own provider of the <code>HeroTaxReturnService</code>.
+Recall that every component <em>instance</em> has its own injector.
+Providing the service at the component level ensures that <em>every</em> instance of the component gets its own, private instance of the service.
+No tax return overwriting. No mess.</p>
+<div class="l-sub-section"><p>The rest of the scenario code relies on other Angular features and techniques that you can learn about elsewhere in the documentation.
+You can review it and download it from the <live-example></live-example>.</p>
+</div><h3 id="scenario-specialized-providers">Scenario: specialized providers</h3>
+<p>Another reason to re-provide a service is to substitute a <em>more specialized</em> implementation of that service,
+deeper in the component tree.</p>
+<p>Consider again the Car example from the <a href="./dependency-injection.html">Dependency Injection</a> guide.
+Suppose you configured the root injector (marked as A) with <em>generic</em> providers for
+<code>CarService</code>, <code>EngineService</code> and <code>TiresService</code>.</p>
+<p>You create a car component (A) that displays a car constructed from these three generic services.</p>
+<p>Then you create a child component (B) that defines its own, <em>specialized</em> providers for <code>CarService</code> and <code>EngineService</code>
+that have special capabilites suitable for whatever is going on in component (B).</p>
+<p>Component (B) is the parent of another component (C) that defines its own, even <em>more specialized</em> provider for <code>CarService</code>.</p>
+<figure class="image-display"><img src="/resources/images/devguide/dependency-injection/car-components.png" alt="car components" width="220"></figure><p>Behind the scenes, each component sets up its own injector with zero, one, or more providers defined for that component itself.</p>
+<p>When you resolve an instance of <code>Car</code> at the deepest component (C),
+its injector produces an instance of <code>Car</code> resolved by injector (C) with an <code>Engine</code> resolved by injector (B) and
+<code>Tires</code> resolved by the root injector (A).</p>
+<figure class="image-display"><img src="/resources/images/devguide/dependency-injection/injector-tree.png" alt="car injector tree" width="600"></figure><div class="l-sub-section"><p>The code for this <em>cars</em> scenario is in the <code>car.components.ts</code> and <code>car.services.ts</code> files of the sample
+which you can review and download from the <live-example></live-example>.</p>
+</div><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div data-swiftype-index="false" class="main-footer"><nav class="background-midnight grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">RESOURCES</h3><ul class="text-body"><!-- TODO: (ericjim) make a libraries page to showcase all angular libraries--><!--li <a href="/libraries.html">Libraries</a>--><li><a href="/about/">About</a></li><li><a href="/resources/#Education">Books & Training</a></li><li><a href="/resources/">Tools & Libraries</a></li><li><a href="/resources/">Community</a></li><li><a href="/presskit.html">Press Kit</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="http://stackoverflow.com/questions/tagged/angular2">Stack Overflow</a></li><li><a href="https://gitter.im/angular/angular">Gitter</a></li><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://github.com/angular/angular/issues"> Report Issues</a></li><li><a class="footer-feedback" ng-click="appCtrl.openFeedback()" aria-label="Submit feedback on this page"> Site Feedback</a></li></ul></div><div class="c2"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="/events.html">Events</a></li><li><a href="http://www.meetup.com/topics/angularjs/">Meetups</a></li><li><a href="https://twitter.com/angular"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li><li><a href="/contribute.html"> Contribute</a></li></ul></div><div class="c2"><h3 class="text-headline">LANGUAGES</h3><ul class="text-body"><li><a href="https://angular.cn/">中文版</a></li></ul></div></nav><footer class="background-midnight"><small class="text-caption">Powered by Google ©2010-2017. Code licensed under an <a href="/license">MIT-style License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</small><a aria-label="View Style Guide" href="/docs/ts/latest/styleguide.html" title="Style Guide" class="styleguide-trigger"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><script src="/resources/js/vendor/clipboard.min.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script><!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+<!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/util.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/controllers/resources-controller.js"></script><script src="/resources/js/directives/cheatsheet.js"></script><script src="/resources/js/directives/api-list.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/bold.js"></script><script src="/resources/js/directives/announcement-bar.js"></script><script src="/resources/js/directives/code.js"></script><script src="/resources/js/directives/copy.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><script src="/resources/js/directives/if-docs.js"></script><script src="/resources/js/directives/live-example.js"></script><script src="/resources/js/directives/ngio-ex-path.js"></script><script src="/resources/js/directives/scroll-y-offset-element.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-8594346-15', 'auto');
+ga('send', 'pageview')
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK','2.0.0');
+
+</script><!-- Google Feedback --><script src="//www.gstatic.com/feedback/api.js" type="text/javascript"></script><!-- Twitter Widget --><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}})(document,"script","twitter-wjs");</script></body></html>
